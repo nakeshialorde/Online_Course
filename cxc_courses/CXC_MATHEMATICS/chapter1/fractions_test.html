@@ -1,0 +1,770 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Ability Bootstarp Website Template | Services :: w3layouts</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/quiz.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'><link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Tutors246 Online Course Portal</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+   
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+  <!-- Material Design icon font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-animate.min.js"></script>
+  <link rel="stylesheet" href="assets/css/quiz.css" />
+  <style>
+ #entername {
+        /*background: url('') no-repeat;
+	    	background-size: cover; */
+        /*box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);*/
+      margin-top: 100px;
+      height: 100%;
+    }
+    
+    #finomena {
+        padding: 50px;
+    }
+    
+    #entername h3 {
+        font-family: 'Raleway';
+    }
+
+    #entername a {
+    	text-decoration: none;
+    }
+    
+    .inputname {
+        padding-top: 50px;
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+        align-items: center;
+    }
+    
+    #s_button {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .btn {
+        display: block;
+    }
+    
+    #enter_name {
+        display: block;
+        text-align: center;
+    }
+    
+    #questions .container {
+        width: 60%;
+        padding: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #questions p {
+        font-size: 1.3em;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    #questions .opt {
+        font-size: 1.3em;
+        font-family: 'Raleway', sans-serif;
+        border: 1px solid #ececec;
+        border-radius: 4px;
+        margin-top: 1em;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .opt:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px #ececec;
+        /*background: #ececec;*/
+        transition: 0.2s;
+    }
+    .ans{
+    	margin-top: 2em;
+    }
+    
+    #q1,
+    #q2,
+    #q3,
+    #q4,
+    #q5 {
+        display: none;
+    }
+
+    .ques .ans .opt label {
+    	position: relative;
+    	display: block;
+    	padding: 0 1em 1em 1em;
+    }
+
+
+    /*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/
+	.ink {
+		display: block; position: absolute;
+		background: hsl(180, 40%, 80%);
+		border-radius: 100%;
+		transform: scale(0);
+	}
+	/*animation effect*/
+	.ink.animate {animation: ripple 0.65s linear;}
+	@keyframes ripple {
+		/*scale the element to 250% to safely cover the entire link and fade it out*/
+		100% {opacity: 0; transform: scale(2.5);}
+	}
+
+    #questions input[type="radio"] {
+       opacity:0.011;
+       z-index:100;
+    }
+
+    #questions input[type="radio"]:checked + label {
+       color: #DC1850;
+    }
+
+    #questions label {
+       cursor:pointer;
+       z-index:90;
+    }
+
+    #next {
+    	display: none;
+    	float: right;
+    }
+
+    #result {
+    	padding: 0 50px 50px 50px;
+    }
+
+    #result #questions_end {
+    	font-size: 1.3em;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    #result #chart {
+    	width: 800px; 
+    	height: 400px;
+    }
+
+    #loading_results {
+    	text-align: center;
+    	font-size: 5em;
+    	font-family: 'Raleway', sans-serif;
+    	padding-top: 200px;
+    }
+</head>
+
+<body>
+
+	  <div class="wrapper">
+        <div class="sidebar" data-color="purple">
+  <div class="sidebar-wrapper">
+               					
+					<br clear="all">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="pe-7s-graph"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Enrolled Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <i class="pe-7s-study"></i>
+                            <p>Progress Report</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://tutors246.com/ourtutors.html">
+                            <i class="pe-7s-notebook"></i>
+                            <p>Schedule A Tutor</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Course_List.html">
+                            <i class="pe-7s-culture pe-fw"></i>
+                            <p>Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="note.html">
+                            <i class="fa fa-pencil"></i>
+                            <p>Notepad</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html">
+                            <i class="pe-7s-config pe-fw"></i>
+                            <p>Admin Login</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a class="navbar-brand" href="#" style="color: #337ab7;">End of Section Quiz</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-dashboard"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-sm hidden-xs"></b>
+                                    <span class="notification hidden-sm hidden-xs" style="color: #337ab7;">5</span>
+                                    <p class="hidden-lg hidden-md">
+                                        5 Notifications
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#">Notification 1</a></li>
+                                    <li><a href="#">Notification 2</a></li>
+                                    <li><a href="#">Notification 3</a></li>
+                                    <li><a href="#">Notification 4</a></li>
+                                    <li><a href="#">Another notification</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-search"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Search</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="">
+                                    <p style="color: #337ab7;">Account</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p style="color: #337ab7;">
+                                        Courses
+                                        <b class="caret"></b>
+                                    </p>
+
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#" style="color: #337ab7;">Home</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Enrolled Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Progress Report</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Available Tutors</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p style="color: #337ab7;">Log out</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg hidden-md"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+       
+		<html ng-app="weightedQuizApp" ng-controller="weightedQuizAppController">
+
+<body>
+  <section id="entername">
+        <div class="container">
+            <h3 class="text-center" id="finomena"> HTML Quiz for Beginners </h3>
+            <div class="inputname">
+                <div class="form-group">
+                    <label for="name" id="enter_name">Enter your name</label>
+                    <br>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <br>
+                <div class="form-group">
+	                <a href="#q1">
+	                    <button type="submit" class="btn btn-default btn-lg" id="s_button">Start the quiz!</button>
+	                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="content"></div>
+    <section id="questions">
+        <div class="container">
+        <form id = "ques">
+            <div class="ques" id="q1">
+                <p>
+                    <span>Q1. Title tag in HTML must be within</span>
+                    <div class="row ans">
+	                    <div class="col-md-6">
+	                        <div class="opt">
+			                        <input type="text" id="q1opt1" name="q1" value="Body" required />
+	                                 <label for="q1opt1"> Body </label>
+		                    </div>
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+		                        <div class="opt"> 
+			                        
+			                        <input type="radio" id="q1opt2" name="q1" value="Head" />
+	                                 <label for="q1opt2"> Head </label> 
+			                        
+		                        </div>
+	                       
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+		                        <div class="opt"> 
+		                        <input type="radio" id="q1opt3" name="q1" value="Section" />
+	                                 <label for="q1opt3"> Section </label>
+		                         
+		                        </div>
+		                    
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+		                        <div class="opt">
+		                        <input type="radio" id="q1opt4" name="q1" value="Script" />
+	                                 <label for="q1opt4"> Script </label>
+		                        
+		                         </div>
+	                        
+	                    </div>
+                    </div>
+                </p>
+            </div>
+            <div class="ques" id="q2">
+                <p>
+                    <span>Q2. What is TD tag used for?</span>
+                    <div class="row ans">
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+			                    	<input type="radio" id="q2opt1" name="q2" value="Table Records" required />
+	                                 <label for="q2opt1"> Table Records</label>
+			                    </div>
+			                
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+			                    	<input type="radio" id="q2opt2" name="q2" value="Table Description" />
+	                                 <label for="q2opt2"> Table Description </label>
+			                    </div>
+		                    
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                   <input type="radio" id="q2opt3" name="q2" value="Table Row" />
+	                                 <label for="q2opt3"> Table Row </label>
+			                     </div>
+		                    
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                   <input type="radio" id="q2opt4" name="q2" value="None of these" />
+	                                 <label for="q2opt4"> None of these </label>
+			                     </div>
+		                  
+	                    </div>
+                    </div>
+                </p>
+            </div>
+            <div class="ques" id="q3">
+                <p>
+                    <span>Q3. What is the order of elements in Margin and Padding?</span>
+                    <div class="row ans">
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt"> 
+                                    <input type="radio" id="q3opt1" name="q3" value="Top Bottom Left Right" required />
+	                                 <label for="q3opt1"> Top Bottom Left Right </label>
+			                     </div>
+		                    
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                    <input type="radio" id="q3opt2" name="q3" value="Top Left Right Bottom" />
+	                                 <label for="q3opt2"> Top Left Right Bottom </label>
+			                     </div>
+		                    
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                   <input type="radio" id="q3opt3" name="q3" value="Top Right Bottom Left" />
+	                                 <label for="q3opt3"> Top Right Bottom Left</label>
+			                     </div>
+		                    
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                   <input type="radio" id="q3opt4" name="q3" value="Right Left Top Bottom" />
+	                                 <label for="q3opt4"> Right Left Top Bottom </label>
+			                    </div>
+		                    
+	                    </div>
+                    </div>
+                </p>
+            </div>
+            <div class="ques" id="q4">
+                <p>
+                    <span>Q4. Which unit gives measures relative to text?</span>
+                    <div class="row ans">
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                   <input type="radio" id="q4opt1" name="q4" value="pixels" required />
+	                                 <label for="q4opt1"> pixels </label>
+			                     </div>
+		                  
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                   <input type="radio" id="q4opt2" name="q4" value="em" />
+	                                 <label for="q4opt2"> em </label>
+			                    </div>
+		                    
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                    <input type="radio" id="q4opt3" name="q4" value="percentage" />
+	                                 <label for="q4opt3"> percentage </label>
+			                    </div>
+		                    </a>
+	                    </div>
+	                    <div class="col-md-6">
+		                    
+			                    <div class="opt">
+                                    <input type="radio" id="q4opt4" name="q4" value="None of these" />
+	                                 <label for="q4opt4"> None of these </label>
+			                    </div>
+		                    
+	                    </div>
+                    </div>
+                </p>
+            </div>
+            <div class="ques" id="q5">
+                <p>
+                    <span>Q5. Which tag is used to draw horizontal lines in a webpage?</span>
+                    <div class = "row ans">
+	                    <div class = "col-md-6">
+		                    <div class="opt">
+                                  <input type="radio" id="q5opt1" name="q5" value="br" required />
+	                                 <label for="q5opt1"> br </label>
+		                     </div>
+	                    </div>
+	                    <div class = "col-md-6">
+		                    <div class="opt">
+                                  <input type="radio" id="q5opt2" name="q5" value="vr" />
+	                                 <label for="q5opt2"> vr </label>
+		                    </div>
+	                    </div>
+	                    <div class = "col-md-6">
+		                    <div class="opt">
+                                  <input type="radio" id="q5opt3" name="q5" value="line" />
+	                                 <label for="q5opt3"> line </label>
+		                    </div>
+	                    </div>
+	                    <div class = "col-md-6">
+		                    <div class="opt">
+                                  <input type="radio" id="q5opt4" name="q5" value="hr" />
+	                                 <label for="q5opt4"> hr </label> 
+		                    </div>
+	                    </div>
+                    </div>
+                </p>
+            </div>
+            <button class="btn btn-default btn-md" id="next">Next</button>
+        </form>
+        </div>
+    </section>
+    <div id="loading_results"></div>
+    <section id = "result">
+    	<div id="chart"></div>
+    	<div id="questions_end"></div>
+    	
+    </section>
+</body>
+
+<!--   Core JS Files   -->
+<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+
+	var answers = [
+     {
+     	question: "Title tag in HTML must be within",
+     	correctAns: "Head",
+     	selectedAns: "none"
+     },
+
+     {
+        question: "What is TD tag used for?",
+        correctAns: "Table Records",
+     	selectedAns: "none"
+     },
+
+     {
+        question: "What is the order of elements in Margin and Padding?",
+        correctAns: "Top Right Bottom Left",
+     	selectedAns: "none"
+     },
+
+     {
+        question: "Which unit gives measures relative to text?",
+        correctAns: "em",
+     	selectedAns: "none"
+     },
+
+     {
+        question: "Which tag is used to draw horizontal lines in a webpage?",
+        correctAns: "hr",
+     	selectedAns: "none"
+     }
+	]; 
+
+$('#s_button').on('click', function(a){
+	a.preventDefault();
+ 	var name = $('#name').val();
+    if(name.length < 3) {
+    	alert('Please enter a valid name');
+    }
+    else {
+//    $("#entername").fadeOut('fast', function(){
+//     var count = 3;
+
+//     function updateTimer(){
+//     if(count > 0){
+//         $("#content").fadeOut('fast', function(){
+//         	$("#content").text(count);
+//             $("#content").fadeIn();
+//             count--;
+//         });
+        
+//     }
+//     else if(count == 0){
+//         $("#content").fadeOut('fast', function(){
+//         	$("#content").text("Start");
+//             $("#content").fadeIn();
+//             count--;
+//         });
+        
+//     }
+//     else {
+//     	$("#content").fadeOut();
+//         clearInterval(interval);
+        
+//     }
+    
+// }
+
+// setInterval(function(){updateTimer()},1000)
+
+//    });
+ 
+ $("#entername").fadeOut('fast', function(){
+ $('#q1').fadeIn(500);
+ $('#next').fadeIn(500);
+});
+}
+});
+
+var ques=1;
+var corr=0;
+var incorr;
+//var quesplusone;
+$('#next').on('click', function(e){
+	e.preventDefault();
+	if ($('[name="q'+ques+'"]').is(':checked')){
+            answers[ques-1].selectedAns = $("input[type=radio][name=q" +ques+ "]:checked").val();
+            if(answers[ques-1].selectedAns == answers[ques-1].correctAns) {
+    	        corr++;
+            }
+    }
+
+    else
+    	answers[ques-1].selectedAns = "Not answered";
+    //console.log(answers[ques-1].selectedAns);
+    //console.log($("input[type=radio][name=q" +ques+ "]:checked").val());
+    
+
+	$('#q'+ques).fadeOut(500, function(){
+		if(ques==5) {
+
+		    $('#next').hide();
+		    $('#loading_results').html('Loading results, please wait...');
+		    $('#loading_results').delay(2000).fadeOut('400',function(){
+		    	
+                google.charts.load("current", {packages:["corechart"]});
+	            google.charts.setOnLoadCallback(drawChart);
+	            function drawChart() {
+	            var data = google.visualization.arrayToDataTable([
+	            ['Answers', 'Number'],
+	            ['Correct',   corr],
+	            ['Incorrect',   5-corr],
+	            ]);
+
+	            var options = {
+	            title: 'Result of the quiz',
+	            is3D: true,
+	            };
+
+	            var chart = new google.visualization.PieChart(document.getElementById('chart'));
+	            chart.draw(data, options);
+	           }
+		    	for(var i=0; i<answers.length; i++) {
+		    		j=i+1;
+		    		$('#questions_end').append('<br>Q'+j+'. '+answers[i].question+'<br>Your answer: '+answers[i].selectedAns+'<br>Correct answer: '+answers[i].correctAns+'<br>');
+		    	}
+		    	
+		    });
+			
+		}
+
+        else {
+		    ques++;
+	        $('#q'+ques).fadeIn(500);
+        }
+	});	
+    
+});
+
+
+/*$('#q2 .opt a').on('click', function(){
+	$('#q2').fadeOut(500, function(){
+	$('#q3').fadeIn(500);	
+	});
+});
+
+$('#q3 .opt a').on('click', function(){
+	$('#q3').fadeOut(500, function(){
+	$('#q4').fadeIn(500);	
+	});
+});
+
+$('#q4 .opt a').on('click', function(){
+	$('#q4').fadeOut(500, function(){
+	$('#q5').fadeIn(500);	
+	});
+});*/
+
+
+/* $('a[href*="#"]:not([href="#"])').click(function() {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
+  }
+});
+*/
+var parent, ink, d, x, y;
+$(".opt label").click(function(e){
+	parent = $(this).parent();
+	//create .ink element if it doesn't exist
+	if(parent.find(".ink").length == 0)
+		parent.prepend("<span class='ink'></span>");
+		
+	ink = parent.find(".ink");
+	//incase of quick double clicks stop the previous animation
+	ink.removeClass("animate");
+	
+	//set size of .ink
+	if(!ink.height() && !ink.width())
+	{
+		//use parent's width or height whichever is larger for the diameter to make a circle which can cover the entire element.
+		d = Math.max(parent.outerWidth(), parent.outerHeight());
+		ink.css({height: d, width: d});
+	}
+	
+	//get click coordinates
+	//logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
+	x = e.pageX - parent.offset().left - ink.width()/2;
+	y = e.pageY - parent.offset().top - ink.height()/2;
+	
+	//set the position and add class .animate
+	ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+})
+});
+
+</script>
+</body>
+</html>		

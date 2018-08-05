@@ -1,0 +1,1758 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Vectors</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'><link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Tutors246 Online Course Portal</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+  	  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+     <!-- Material Design icon font -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        .button {
+            background-color: #024457;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            .button:hover {
+                opacity: 1
+            }
+    </style>
+    <style>
+
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        ::-moz-scrollbar {
+            display: none;
+        }
+
+        
+        header {
+            position: fixed;
+            top: 0;
+            height: 250px auto !important;
+            width: 100% auto !important;
+            pointer-events: none;
+        }
+
+            header .title {
+                position: absolute;
+                top: 50% auto !important;
+                left: 80px auto !important;
+                color: white;
+                font-size: 40px;
+                line-height: 40px;
+                margin-top: -20px auto !important;
+                transition: .3s all ease;
+                z-index: 999;
+                font-family: Roboto;
+                font-weight: 300;
+                text-transform: capitalize;
+            }
+
+            header .header-bg {
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                background: #024457;
+                transition: .3s all ease;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            header.active .title {
+                font-size: 20px;
+                -webkit-transform: translate(-30px, -85px);
+                -moz-transform: translate(-30px, -85px);
+                -ms-transform: translate(-30px, -85px);
+                -o-transform: translate(-30px, -85px);
+                transform: translate(-30px, -85px);
+                transition: .3s all ease .15s;
+            }
+
+            header.active .header-bg {
+                -webkit-transform: translateY(-170px);
+                -moz-transform: translateY(-170px);
+                -ms-transform: translateY(-170px);
+                -o-transform: translateY(-170px);
+                transform: translateY(-170px);
+                background: #024457;
+                transition: .3s all ease .15s;
+            }
+
+            header.active .cta-ctr {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+                transition: .5s all ease .2s;
+            }
+
+            header.active .cta:after {
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+                transition: .5s all ease .2s;
+                box-shadow: 0 -8px 12px 1px rgba(0, 0, 0, 0.15);
+            }
+
+            header .cta-ctr {
+                position: absolute;
+                top: 50px;
+                right: 50px;
+                bottom: 0;
+                -webkit-transform-origin: bottom center;
+                -moz-transform-origin: bottom center;
+                -ms-transform-origin: bottom center;
+                -o-transform-origin: bottom center;
+                transform-origin: bottom center;
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                transition: .3s all ease;
+            }
+
+            header .cta {
+                width: 60px auto !important;
+                height: 60px auto !important;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .3s all ease;
+                pointer-events: auto;
+                position: relative;
+            }
+
+                header .cta:after {
+                    content: "";
+                    box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.15);
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/arrow-down.svg") no-repeat center 14px transparent;
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                    transition: .3s all ease;
+                }
+
+
+        .content-ctr {
+            width: 100% auto !important;
+            height: 100% auto !important;
+            background: white;
+            overflow: scroll;
+            position: relative;
+        }
+
+            .content-ctr.active .header-content-ctr {
+                height: 0% auto !important;
+                transition: .3s height ease .45s;
+            }
+
+                .content-ctr.active .header-content-ctr .title {
+                    transition: .3s all ease;
+                    opacity: 0;
+                    -webkit-transform: translateY(-20px);
+                    -moz-transform: translateY(-20px);
+                    -ms-transform: translateY(-20px);
+                    -o-transform: translateY(-20px);
+                    transform: translateY(-20px);
+                }
+
+                .content-ctr.active .header-content-ctr .par {
+                    transition: .3s all ease .05s;
+                    opacity: 0;
+                    -webkit-transform: translateY(-20px);
+                    -moz-transform: translateY(-20px);
+                    -ms-transform: translateY(-20px);
+                    -o-transform: translateY(-20px);
+                    transform: translateY(-20px);
+                }
+
+            .content-ctr.active .main-content-ctr {
+                height: 100%;
+                overflow: scroll;
+            }
+
+                .content-ctr.active .main-content-ctr .title {
+                    transition: .3s all ease .65s;
+                    -webkit-transform: translateY(0px);
+                    -moz-transform: translateY(0px);
+                    -ms-transform: translateY(0px);
+                    -o-transform: translateY(0px);
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+                .content-ctr.active .main-content-ctr .par {
+                    transition: .3s all ease .7s;
+                    -webkit-transform: translateY(0px);
+                    -moz-transform: translateY(0px);
+                    -ms-transform: translateY(0px);
+                    -o-transform: translateY(0px);
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+            .content-ctr .title {
+                font-family: Roboto;
+                margin-bottom: 30px;
+                font-size: 34px;
+                color: #024457;
+                transition: .3s all ease;
+            }
+
+            .content-ctr .par {
+                font-family: Roboto;
+                font-size: 18px;
+                line-height: 1.5;
+                font-weight: 300;
+                color: #777;
+            }
+
+            .content-ctr .header-content-ctr {
+                position: relative;
+                height: 100% auto !important;
+                overflow: hidden;
+                transition: .3s height ease;
+            }
+
+                .content-ctr .header-content-ctr .title {
+                    transition: .3s all ease .15s;
+                }
+
+                .content-ctr .header-content-ctr .par {
+                    transition: .3s all ease .3s;
+                }
+
+            .content-ctr .header-content {
+                position: absolute;
+                right: 0;
+                bottom: 110px;
+                left: 80px;
+            }
+
+            .content-ctr .main-content-ctr {
+                position: relative;
+                min-height: 0%;
+                transition: .3s height ease;
+                overflow: hidden;
+            }
+
+                .content-ctr .main-content-ctr .title,
+                .content-ctr .main-content-ctr .par {
+                    opacity: 0;
+                    -webkit-transform: translateY(20px);
+                    -moz-transform: translateY(20px);
+                    -ms-transform: translateY(20px);
+                    -o-transform: translateY(20px);
+                    transform: translateY(20px);
+                }
+
+            .content-ctr .main-content {
+                position: relative;
+                top: 50%;
+                right: 0;
+                left: 0;
+                margin-left: 50px;
+                margin-top: -59px;
+            }
+            </style>
+              
+ <style>
+.cards {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  max-width: 40em;
+  margin: 7% auto 0;
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 0 40px #000;
+  -webkit-transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+          transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  transition: background 0.4s linear, -webkit-transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s;
+  transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.4s linear;
+  transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.4s linear, -webkit-transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.card :last-child {
+  margin-bottom: 0;
+}
+.card--next {
+  z-index: 5;
+  -webkit-transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+          transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+}
+.card--out {
+  -webkit-animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+          animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+  -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+          transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  z-index: 1;
+  background: #fff;
+}
+@-webkit-keyframes card-out {
+  0% {
+    z-index: 20;
+    -webkit-transform: translateY(0px) rotate(-4deg);
+            transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+  }
+  80% {
+    z-index: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  }
+}
+@keyframes card-out {
+  0% {
+    z-index: 20;
+    -webkit-transform: translateY(0px) rotate(-4deg);
+            transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+  }
+  80% {
+    z-index: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  }
+}
+.card--current {
+  cursor: auto;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  background: #fff;
+  -webkit-transform: rotate(-1deg) translateX(0%) scale(1);
+          transform: rotate(-1deg) translateX(0%) scale(1);
+}
+h1 {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  padding: 40px;
+  background: #fff;
+}
+
+</style>
+<style type="text/css">
+/* white */
+/* light grey */
+/* black */
+/* muted purple-navy */
+/* black */
+/* white */
+/* light grey */
+/* black */
+/* muted purple-navy */
+/* black */
+/* Mixins */
+/* Main */
+*:not(elem-div-loading-spinner) {
+  border-radius: 20px;
+}
+
+.answer {
+  border: 1px solid #F3F3F3;
+  animation: intro-animation 0.3s 0s linear;
+  font-size: 19px;
+  padding: 8px 10px 7px 10px;
+  text-align: left;
+  width: 350px;
+}
+
+.answer:hover {
+  border: 1px solid #a7a7a7;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+body {
+  background-color: #F3F3F3;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 0px dotted #000;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.elem-button-download {
+  background-color: #F3F3F3;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.elem-button-download:hover {
+  background-color: #f8f8f8;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.elem-button-back {
+  background-color: #F3F3F3;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 14.6153846154px;
+  margin-bottom: 20px;
+}
+
+.elem-button-back:hover {
+  background-color: #f8f8f8;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.elem-button-end-screen {
+  background-color: #F3F3F3;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  margin: 7px;
+  width: 200px;
+}
+
+.elem-button-end-screen:hover {
+  background-color: #f8f8f8;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  margin: 7px;
+  width: 200px;
+}
+
+.elem-button-nav {
+  background-color: #F3F3F3;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  margin: 3px;
+}
+
+.elem-button-nav:disabled,
+.elem-button-nav[disabled] {
+  background-color: #F3F3F3;
+  border: 0;
+  color: #cdcdcd;
+  cursor: not-allowed;
+  margin: 3px;
+  padding: 8px;
+}
+
+.elem-button-nav:hover {
+  background-color: #f8f8f8;
+  border: 0;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  margin: 3px;
+}
+
+.elem-div-answer-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 0px dotted #000;
+  font-size: 17px;
+  height: 50px;
+  min-height: 50px;
+  width: 100%;
+}
+
+.elem-div-answers-container {
+  border: 0px dotted #000;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.elem-div-loading-spinner {
+  animation: spinning 2s 0s linear infinite;
+  border: 10px solid #f3f3f3;
+  border-bottom: 10px solid #ebebeb;
+  border-radius: 100%;
+  border-top: 10px solid #ebebeb;
+  height: 100px;
+  margin: auto;
+  width: 100px;
+}
+
+.elem-div-nav-buttons-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 0px dotted #000;
+  height: 50px;
+  min-height: 50px;
+  width: 100%;
+}
+
+.elem-div-progress-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 0px dotted #000;
+  height: 15px;
+  margin-bottom: 35px;
+  min-height: 15px;
+  width: 100%;
+}
+
+.elem-div-question-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 0px dotted #000;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.elem-div-results-container {
+  border: 1px solid #F3F3F3;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  height: 190px;
+  overflow-y: scroll;
+  padding: 3px;
+  width: 50%;
+}
+
+.elem-small-progress-val {
+  margin-left: 5px;
+}
+
+.elem-span-score {
+  font-size: 27px;
+}
+
+.elem-table-results {
+  animation: reveal-stretch-element 0.4s 0s linear;
+  border: 0;
+  font-size: 12.6666666667px;
+  transform-origin: center top;
+}
+
+.elem-table-results td {
+  border: 1px solid #F3F3F3;
+}
+
+.elem-table-results th {
+  border: 0;
+}
+
+.elem-table-results th, .elem-table-results td {
+  padding: 3px;
+  width: 25%;
+}
+
+.elem-title-screen-title {
+  animation: intro-animation 0.3s 0s linear;
+  font-size: 38px;
+  letter-spacing: -3px;
+  margin-top: 100px;
+  text-transform: uppercase;
+}
+
+footer {
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  font-size: 6.5517241379px;
+  height: 16px;
+  letter-spacing: 3px;
+  width: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+progress {
+  display: block;
+  padding: 4px;
+  border: 0 none;
+  background: #F3F3F3;
+  border-radius: 14px;
+}
+
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+
+progress::-webkit-progress-value {
+  border-radius: 12px;
+  background: #00b300;
+}
+
+.result-mark-cross {
+  color: red;
+}
+
+.result-mark-tick {
+  color: #00cc00;
+}
+
+.sub-container {
+  background-color: #FFF;
+  border: 0px solid #9593A5;
+  box-shadow: 0px 0px 0px silver;
+  padding: 50px;
+  height: 92%;
+  width: 100%;
+}
+
+.user-answer {
+  border: 1px solid blue;
+  color: #000099 !important;
+  text-decoration: underline;
+}
+
+/* Keyframe animations */
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes intro-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes reveal-stretch-element {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+	  <div class="wrapper">
+        <div class="sidebar" data-color="purple">
+  <div class="sidebar-wrapper">
+               					
+					<br clear="all">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="pe-7s-graph"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Enrolled Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <i class="pe-7s-study"></i>
+                            <p>Progress Report</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://tutors246.com/ourtutors.html">
+                            <i class="pe-7s-notebook"></i>
+                            <p>Schedule A Tutor</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Course_List.html">
+                            <i class="pe-7s-culture pe-fw"></i>
+                            <p>Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="note.html">
+                            <i class="fa fa-pencil"></i>
+                            <p>Notepad</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html">
+                            <i class="pe-7s-config pe-fw"></i>
+                            <p>Admin Login</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a class="navbar-brand" href="concept_of_vectors.html" style="color: #337ab7;">Concept of a Vector</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-dashboard"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-sm hidden-xs"></b>
+                                    <span class="notification hidden-sm hidden-xs" style="color: #337ab7;">5</span>
+                                    <p class="hidden-lg hidden-md">
+                                        5 Notifications
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#">Notification 1</a></li>
+                                    <li><a href="#">Notification 2</a></li>
+                                    <li><a href="#">Notification 3</a></li>
+                                    <li><a href="#">Notification 4</a></li>
+                                    <li><a href="#">Another notification</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-search"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Search</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="">
+                                    <p style="color: #337ab7;">Account</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p style="color: #337ab7;">
+                                        Courses
+                                        <b class="caret"></b>
+                                    </p>
+
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#" style="color: #337ab7;">Home</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Enrolled Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Progress Report</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Available Tutors</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p style="color: #337ab7;">Log out</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg hidden-md"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+          
+<div class="wrapper">
+<h1 style="font-size:48px;"><center><b>Concept of a Vector</center></h1>  
+<i><div style="text-align: center;"><caption>Click on the card behind</caption></div></i>
+<ul class="cards">
+  
+  <li class="card">
+  <h1><div style="text-align: center;">Vectors</div></h1>
+    
+    <p>A quantity <b>a</b> (represented by arrows) that have both a length (magnitude) and direction. The length of a vector is the distance from its initial point P to its final point Q (These points can also be represented by A for head and B for tail). A vector is represented by <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>, the arrow above the components indicates that it is a vector quantity.<br />
+      <center><b>Example of a Vector </b><br /><img src="https://byjus.com/formulas/wp-content/uploads/2016/04/Vector-Formulas.png" alt=""><br /><caption>The tail of a vector is its origin and the head is the endpoint.Vectors can be in component form (a,b) or in the <a href="position_vector.html">coordinate plane.</caption></a></center></p>
+  </li>
+  
+  <li class="card">
+    <div style="text-align: center;"><h1>Magnitude</h1></div>
+    <p>The magnitude of a vector <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> refers to its length and is represented by <br>&#8739;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>&#8739;.The length of a vector is determined by <a href="pythagoras_theorem.html">Pythagoras'
+Theorem </a> whereby <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = <span>&#8730;</span>x<sup>2</sup> &#43; y<sup>2</sup>. After finding the square root of the two components which can also be represented by <span>&#8730;</span>a<sup>2</sup> &#43; b<sup>2</sup>, the result is simply added to get the magnitude or length of the vector in component form or in the plane.<center><img src="https://www.mathsisfun.com/algebra/images/vector-mag-dir.svg" alt=""><br><br><i><caption>The magnitude is the length from the tail to the head of the vector v&#8407;.</caption></i></center><br clear="all"><br clear="all"><br clear="all"><br clear="all"></p> 
+  </li>
+  
+  
+  <li class="card">
+   <div style="text-align: center;"> <h1>Unit Vector</h1></div>
+    <p>Vector of length 1 or &#8739;u&#8739; = 1. A unit vector can start with any vector except the zero vector. The formula for the unit vector <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is obtained by dividing a vector by a magnitude, <b>u</b> = AB&#8407; &#x2215; &#8739;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>&#8739;.<caption>Checking to ensure that the length of <b>u</b> is really 1, &#8739;<b>u</b>&#8739; = &#x2223;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> &#8725; &#8739;AB&#8739; = &#8739; <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> &#8725;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> &#8739; = 1.<center><img src="http://mathonline.wdfiles.com/local--files/standard-unit-vectors/Screen%20Shot%202014-06-13%20at%2012.49.19%20PM.png" alt=""></center><br clear="all"><br></p>
+</li>
+  
+<li class="card">
+<div style="text-align: center;"><h1>Direction</h1></div>
+<p>The direction of a vector <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is obtained by finding the angle of the vector. The angle is obtained using the following formula, &#952; = tan <sup>-1</sup> &#8333;b <span>&#8725;</span> a&#8334;. <br clear="all"><center><img src="https://kullabs.com/img/note_images/Ri66U342gjdy1GKp.jpg" alt="" width="450px" height="250px"></center></p>
+<br><br clear="all"><br clear="all"><br clear="all">
+  
+  <li class="card">
+<div style="text-align: center;"><h1>Scalar</h1></div>
+
+    <p>A scalar is a real number, while vectors are not real numbers. A scalar has a size or length but no direction, while vectors have both a length and direction. <br /> <div style="text-align: center;"><b>Scalar Multiples</b> </div><br> Multiplying a scalar by a positive number does not affect its direction of the vector, just its length. However, multiplying by a negative number changes the direction to the opposite side, multiplying by 0 causes a vector to lose all direction.<center><img src="https://dj1hlxw0wr920.cloudfront.net/userfiles/wyzfiles/12bcd28f-90fb-439e-8f66-e926b8b5bfd8.gif" alt="" width="250px" height="200px"></center></p><br clear="all">
+  </li>
+  
+     <li class="card">
+<div style="text-align: center;"><h1>Parallel Vectors</h1></div>
+
+    <p>A parallel vector or zero vector comprises of two vectors with the same direction and are scalar multiples of each other.The cross product of a vector determines whether it is parallel, if it equals 0 or <b>a</b>&#215;<b>b</b> = 0. The scalar multiply or cross product of two or more vectors is represented by the formula <img src="http://tutorial.math.lamar.edu/Classes/CalcII/CrossProduct_files/eq0004P.gif" alt="" height="80px" width="100px"> = (a<sub>2</sub>b<sub>3</sub> &#8722; a<sub>3</sub>b<sub>2</sub> ) &#8722; (a<sub>1</sub>b<sub>3</sub> &#8722; a<sub>3</sub>b<sub>1</sub>) &#43; (a<sub>1</sub>b<sub>2</sub> &#8722; a<sub>2</sub>b<sub>1</sub>). <br>&#8756; <b>a</b> = (1,2,3), <b>b</b> = (3,2,1) then <b>a</b>&#215;<b>b</b> = (2 x 1 - 3 x 2) - (1 x 1 - 3 x 3) + (1 x 2 - 2 x 3) = (-4) - (-8) + (-4) = 0.<center><img src="https://www.physics.uoguelph.ca/tutorials/vectors/66new.gif" alt="" width="250px" height="200px"></center></p>
+  </li>
+  
+    <li class="card">
+<div style="text-align: center;">    <h1>Equal Vectors</h1></div>
+
+    <p>Like the parallel vector, equal vectors have the same direction, however, they also have the same magnitude. With an equal vector, <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>CD</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>. Therefore, where <img src="http://tutorial.math.lamar.edu/Classes/CalcII/CrossProduct_files/eq0004P.gif" alt="" height="80px" width="100px">
+<b>a</b> = (2; 8; 1) and <b>b</b> = (2; 8; 1) are equal.
+<br><b>Solution:</b>
+<br>Verify the equality of components of vectors
+<br>a<sub>1</sub> = b<sub>1</sub> = 2
+<br>a<sub>2</sub> = b<sub>2</sub> = 8
+<br>a<sub>3</sub> = b<sub>3</sub> = 1
+<br clear="all">
+<center><img src="http://www.nabla.hr/EqualVectors.gif" alt=""></center>
+    </p><br clear="all">
+  </li>
+    <li class="card">
+<div style="text-align: center;">    <h1>Inverse Vectors</h1></div>
+
+    <p>Inverse vectors have the same length (magnitude) but the direction of one vector is in the opposite direction. Each vector is therefore the inverse of the other. <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>BA</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>-AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>
+
+<center><img src="https://img.sangakoo.com/img/img/vecop.gif" alt="" width="250px" height="200px"></center></p><br clear="all"><br clear="all"><br clear="all"><br clear="all"><br><br clear="all">
+  </li>
+</ul>
+
+<br clear="all"><br clear="all"><br><br clear="all"><br clear="all">
+            
+<div style="text-align: center;"><font size="25px"><b>End of Section Quiz</b></font></div>
+
+
+ <div class="container">
+  <span class="sub-container" id="sub-container">
+    
+    <!-- Question container -->
+    <div class="elem-div-question-container">
+      <h1 id="elem-h1-question">
+        Loading...
+      </h1>
+    </div>
+    
+    <!-- Progress bar container -->
+    <div class="elem-div-progress-container">
+      <progress id="elem-progress-bar" class="hidden"></progress>
+      <small class="elem-small-progress-val" id="elem-small-progress-val"></small>
+    </div>
+    
+    <!-- Answers container -->
+    <div class="elem-div-answers-container" id="elem-div-answers-container">
+      
+      <!--<img src="https://i.giphy.com/media/sSgvbe1m3n93G/giphy.webp" width="50px"/>-->
+      
+      <div class="elem-div-loading-spinner"></div>
+      
+    </div>
+    <div id="elem-div-nav-buttons-container" class="elem-div-nav-buttons-container hidden">
+      <button id="elem-button-nav-prev" class="elem-button-nav">
+        &larr; Prev
+      </button>
+      <button id="elem-button-nav-next" class="elem-button-nav">
+        Next &rarr;
+      </button>
+    </div>
+</div>
+
+
+
+
+
+<div style="text-align: center;">
+<div class="container">
+  <h2>Chapter Progress</h2>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" style="width:7%">
+      7%<span class="sr-only">7% Complete</span>
+    </div>
+  </div>
+</div></div>
+
+<br />
+<div style="text-align: right;"><p align="bottom-right"> 
+<div class="bottomright">
+<a href="simplifying_vectors.html"> 
+<button class="button">Continue</button></a>
+</div>                       
+</p>
+</div>
+
+
+<script>
+$.fn.commentCards = function(){
+
+  return this.each(function(){
+
+    var $this = $(this),
+        $cards = $this.find('.card'),
+        $current = $cards.filter('.card--current'),
+        $next;
+
+    $cards.on('click',function(){
+      if ( !$current.is(this) ) {
+        $cards.removeClass('card--current card--out card--next');
+        $current.addClass('card--out');
+        $current = $(this).addClass('card--current');
+        $next = $current.next();
+        $next = $next.length ? $next : $cards.first();
+        $next.addClass('card--next');
+      }
+    });
+
+    if ( !$current.length ) {
+      $current = $cards.last();
+      $cards.first().trigger('click');
+    }
+
+    $this.addClass('cards--active');
+
+  })
+
+};
+
+$('.cards').commentCards();
+</script>
+<script type="text/javascript" >
+(function() {
+  
+  'use strict';
+  
+  /* DOM elements:
+   ***************************************************/
+  
+  const elemQuestion = $('#elem-h1-question');
+  const elemAnswersContainer = $('#elem-div-answers-container');
+  const elemProgressBar = $('#elem-progress-bar');
+  const elemProgressBarText = $('#elem-small-progress-val');
+  const elemNavArrowsContainer = $('#elem-div-nav-buttons-container');
+  const elemButtonNavPrev = $('#elem-button-nav-prev');
+  const elemButtonNavNext = $('#elem-button-nav-next');
+  
+  
+  /* HTML elements:
+   ***************************************************/
+  
+  const loader = `<h1 class="elem-title-screen-title"><div class="elem-div-loading-spinner"></div></h1>`;
+  
+  
+  /* Config:
+   ***************************************************/
+  
+  let config = {
+    
+    // The end-point in which we gather question and answer data:
+    api: {
+      uri: 'https://api.myjson.com/bins/1772e5'
+    },
+    
+    // Dictionaries like an alphabet For determining answer letter (based on its index)
+    dictionaries: {
+      alphabet: [
+        'A', 'B', 'C', 'D', 'E', 'F', 'G',
+        'H', 'I', 'J', 'K', 'L', 'M', 'N',
+        'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+        'V', 'W', 'X', 'Y', 'Z'
+      ]
+    },
+    
+    // An array of UI categories capable of having their visibility mass-updated:
+    dom: {
+      uiArr: ['navArrows', 'percentage']
+    },
+    
+    // Q & A data — including currentIndex to determine which question user is on:
+    question: {
+      currentIndex: 0,
+      data: [],
+      retake: false,
+      score: 0
+    }
+  };
+  
+  
+  /* UI labels:
+   ***************************************************/
+  
+  var uiLabels = {
+    main: {
+      general: {
+        title: null,
+        back: 'Back',
+        loading: 'Loading...',
+        skipQuestion: 'No answer selected. Skip the question?'
+      },
+      start: {
+        begin: 'Begin &rarr;'
+      },
+      end: {
+        answeredCorrectly: 'questions answered correctly',
+        downloadReport: 'download full report',
+        results: 'Results',
+        resultsTable: { 
+          answerCorrect: 'Correct answer',
+          answerUser: 'User answer',
+          mark: 'Mark',
+          question: 'Question'
+        },
+        retake: 'Retake quiz',
+        review: 'Review answers',
+        reviewYourAnswers: 'Review your answers',
+        score: 'Score'
+      },
+      footer: 'Made by John'
+    },
+    feedback: {
+      allDone: 'All done',
+      amazing: 'You must be a genius',
+      correct: 'Correct',
+      feedback: 'You said',
+      finishedIn: 'Finished in',
+      reviewAnswers: 'Review your answers',
+      scored: 'You scored',
+      tooBad: 'Too bad. Give it another go',
+      veryGood: 'Very good',
+      wellDone: 'Well done'
+    },
+  };
+  
+  
+  /* User score:
+   ***************************************************/
+  
+  var userScore = {
+    
+    // User score ranges:
+    range: {
+      message: [
+          { low: 95, high: 100, feedback: `${uiLabels.feedback.amazing}` },
+          { low: 90, high: 94, feedback: `${uiLabels.feedback.wellDone}` },
+          { low: 70, high: 89, feedback: `${uiLabels.feedback.veryGood}` },
+          { low: 50, high: 69, feedback: `${uiLabels.feedback.allDone}` },
+          { low: 0, high: 49, feedback: `${uiLabels.feedback.tooBad}` }
+      ],
+      default: `${uiLabels.feedback.allDone}`
+    },
+    
+    // Feedback based on user score ranges:
+    getFeedback: function(percentage) {
+      let feedbackMsg, percent = percentage;
+      switch (true) {
+        case (percent >= userScore.range.message[0].low && percent <= userScore.range.message[0].high):
+            feedbackMsg = userScore.range.message[0].feedback;
+            break;
+        case (percent >= userScore.range.message[1].low && percent <= userScore.range.message[1].high):
+            feedbackMsg = userScore.range.message[1].feedback;
+            break;
+        case (percent >= userScore.range.message[2].low && percent <= userScore.range.message[2].high):
+            feedbackMsg = userScore.range.message[2].feedback;
+            break;
+        case (percent >= userScore.range.message[3].low && percent <= userScore.range.message[3].high):
+            feedbackMsg = userScore.range.message[3].feedback;
+            break;
+        case (percent >= userScore.range.message[4].low && percent <= userScore.range.message[4].high):
+            feedbackMsg = userScore.range.message[4].feedback;
+            break;
+        default:
+            feedbackMsg = userScore.range.default;
+            break;
+      }
+      return feedbackMsg;
+    },
+    
+    // Loop through data & calculate score by comparing user answer & correct answer:
+    calculate: function() {
+      config.question.score = 0;
+      for (let i = 0; i < config.question.data.length; i++) {
+        let userAnswer = parseInt(config.question.data[i].userAnswer);
+        let correctAnswer = parseInt(config.question.data[i].correct);
+        if (userAnswer === correctAnswer) config.question.score++;
+      }
+    },
+    
+    // Format user score. In this case round it:
+    format: {
+      asPercentage: function() {
+        return Math.round(config.question.score/config.question.data.length * 100);
+      }
+    }
+  };
+  
+  
+  /* Answer:
+   ***************************************************/
+  
+  var answer = {
+    
+    // Populate answer by wrapping in HTML tags and appending to DOM:
+    populate: function(element, index, arr) {
+      const answerWrapped = answer.wrap(index, utilities.getLetter(index), utilities.toTitleCase(element));
+      elemAnswersContainer.append(answerWrapped);
+    },
+    
+    // Update answer content (text/HTML):
+    updateContent: function(answers) {
+      elemAnswersContainer.html('');
+      answers.forEach((element, index, arr) => { answer.populate(element, index, arr); });
+    },
+    
+    // User's answer to be checked, highlighted on UI & set as property of question data array:
+    userAnswer: {
+      check: function(answerIndex) {
+        answer.userAnswer.set(answerIndex);
+        question.next();
+      },
+      highlight: function() {
+        const currentQuestion = config.question.data[question.index.get()];
+        for (let i = 0; i < currentQuestion.answers.length; i++) {
+          let selection = $('#elem-div-ans-' + i);
+          i == currentQuestion.userAnswer ? 
+            selection.addClass('user-answer') : selection.removeClass('user-answer');
+        }
+      },
+      set: function(answerIndex) {
+        config.question.data[question.index.get()].userAnswer = answerIndex;
+        answer.userAnswer.highlight();
+      }
+    },
+    
+    // Wrap answer in HTML tags — ready for appending to DOM:
+    wrap: function(index, letter, answer) {
+      const ansFirstWrap = `
+        <span class="answer" id="elem-div-ans-${index}">
+          ${letter}. ${answer}
+        </span>`;
+      return `<div class="elem-div-answer-container">${ansFirstWrap}</div>`;
+    }
+  };
+  
+  
+  /* Question:
+   ***************************************************/
+  
+  var question = {
+    
+    // Generate question by requesting data, caching and populating it:
+    generate: function(data) {
+      question.getAll(data);
+      question.populate();
+    },
+    
+    // Get all question data by requesting and caching it:
+    getAll: function(data) {
+      if (!uiLabels.main.general.title) uiLabels.main.general.title = data[0].title;
+      elemQuestion.html(`<h1 class="elem-title-screen-title">${uiLabels.main.general.title}</h1>`);
+      config.question.data = data[1];
+    },
+    
+    // Has the user answered? Return truthy reply:
+    hasUserAnswer: function() {
+      return config.question.data[config.question.currentIndex].userAnswer;
+    },
+    
+    // Remove all user answers stored in the question data object:
+    removeAllUserAnswers: function() {
+      for (let i = 0; i <  config.question.data.length; i++) {
+        config.question.data[i].userAnswer = null;
+      }
+    },
+    
+    // Get and modify the index (question number - 1):
+    index: {
+      get: function() {
+        return config.question.currentIndex;
+      },
+      increment: function() {
+        config.question.currentIndex += 1;
+      },
+      decrement: function() {
+        config.question.currentIndex -= 1;
+      }
+    },
+    
+    // Check if more questions are remaining:
+    moreRemaining: function() {
+      return question.index.get() + 1 <= config.question.data.length;
+    },
+    
+    // Go to next question (if there are more) or show the end screen:
+    next: function() {
+      question.index.increment();
+      question.moreRemaining() ? question.populate() : screen.end();
+    },
+    
+    // Go to previous question (if there is one):
+    prev: function() {
+      question.index.decrement();
+      question.populate();
+    },
+    
+    // Set navigation buttons to a suitable disabled state:
+    setNavButtonDisabledStatus: function() {
+      config.question.currentIndex === 0 ? 
+        elemButtonNavPrev.attr('disabled', 'disabled') :
+        elemButtonNavPrev.removeAttr('disabled');
+      config.question.currentIndex == config.question.data.length - 1 ?
+        elemButtonNavNext.attr('disabled', 'disabled') :
+        elemButtonNavNext.removeAttr('disabled');
+    },
+    
+    // Populate the question:
+    populate: function() {
+      const questionNumber = parseInt(config.question.currentIndex + 1);
+      const question = config.question.data[config.question.currentIndex].question;
+      const answers = config.question.data[config.question.currentIndex].answers;
+      this.updateContent(questionNumber, question);
+      this.setNavButtonDisabledStatus();
+      ui.percentage.update();
+      answer.updateContent(answers);
+      answer.userAnswer.highlight();
+    },
+    
+    // Update the DOM to reflect the question text/HTML:
+    updateContent: function(questionNumber, question) {
+      elemQuestion.html(`${questionNumber}. ${question}`);
+    }
+  };
+  
+  
+  /* Results:
+   ***************************************************/
+  
+  var results = {
+    
+    // Add headings to results table (dynamically):
+    addRows: function() {
+      let rows = `
+        <tr>
+          <th>${uiLabels.main.end.resultsTable.question}</th>
+          <th>${uiLabels.main.end.resultsTable.answerCorrect}</th>
+          <th>${uiLabels.main.end.resultsTable.answerUser}</th>
+          <th>${uiLabels.main.end.resultsTable.mark}</th>
+        </tr>`;
+      
+      // Add cells to results table (dynamically):
+      for (let i = 0; i < config.question.data.length; i++) {
+        rows += `
+        <tr>
+          <td>${i + 1}. ${config.question.data[i].question}</td>
+          <td>${config.question.data[i].answers[config.question.data[i].correct]}</td>
+          <td>${config.question.data[i].answers[config.question.data[i].userAnswer]}</td>
+          <td>${results.mark(i)}</td>
+        </tr>`
+      }
+      return rows;
+    },
+    
+    // Generate results table:
+    generate: function() {
+      return `
+        <table class="elem-table-results" border="0px">
+          ${results.addRows()}
+        </table>`;
+    },
+    
+    // Add a mark (tick or cross) to answers in results table:
+    mark: function(i) {
+      const userAnswer = config.question.data[i].userAnswer;
+      const correctAnswer = config.question.data[i].correct;
+      if (userAnswer == correctAnswer) {
+        return '<div class="result-mark-tick">&#10004;</div>'
+      } else {
+        return '<div class="result-mark-cross">&#10005;</div>'
+      }
+    }
+  };
+  
+  
+  /* Screen:
+   ***************************************************/
+  
+  var screen = {
+    
+    // Titlescreen:
+    title: function() {
+      elemQuestion.html(loader);
+      elemAnswersContainer.html(`
+        <button id="elem-button-begin-quiz" class="elem-button-end-screen">
+          ${uiLabels.main.start.begin}
+        </button><br/><br/>
+        <footer>${uiLabels.main.footer}</footer>`);
+      getData();
+    },
+    
+    // Screen at the end of the game — no more questions remain:
+    end: function() {
+      userScore.calculate();
+      const scoreAsPercentage = userScore.format.asPercentage();
+      let scoreMessage = `
+        <span class="elem-span-score">${config.question.score}</span> of 
+        <span class="elem-span-score">${config.question.data.length}</span>  
+        ${uiLabels.main.end.answeredCorrectly}!`;
+        elemQuestion.html(`${userScore.getFeedback(scoreAsPercentage)}!`);
+        elemAnswersContainer.html(`${scoreMessage} (
+        <span class="elem-span-score">${scoreAsPercentage}%</span>).</br><br/>
+        <button id="elem-button-retake-quiz" class="elem-button-end-screen">
+          ${uiLabels.main.end.retake}
+        </button><br/>
+        <button id="elem-button-review-answers" class="elem-button-end-screen">
+          ${uiLabels.main.end.review}
+        </button>`);
+      $('#elem-button-review-answers').on('click', function() { screen.reviewAnswers(); });
+      $('#elem-button-retake-quiz').on('click', function() {
+        gameReset();
+        screen.title();
+      });
+      ui.mode.game.finished();
+    },
+    
+    // Review answers (a container with results table):
+    reviewAnswers: function() {
+      elemQuestion.html(`
+        <button id="elem-button-back-to-finish" class="elem-button-back">
+          &larr; ${uiLabels.main.general.back}
+        </button><br/>${uiLabels.main.end.reviewYourAnswers}:`);
+      $('#elem-button-back-to-finish').on('click', function() { screen.end(); });
+      elemAnswersContainer.html(`
+        <small>Scroll below table to review answers or 
+          <button id="elem-button-download" class="elem-button-download">
+            ${uiLabels.main.end.downloadReport}</button>
+        </small><br/><br/>
+        <div class="elem-div-results-container">${results.generate()}</div>`);
+      $('#elem-button-download').on('click', function() {
+        saveToFile.blobSave(`<div class="elem-div-results-container">${results.generate()}</div>`);
+      });
+    }
+  };
+  
+  
+  /* UI:
+   ***************************************************/
+  
+  var ui = {
+    
+    // UI percentage elements: a way to update values and visibility:
+    percentage: {
+      update: function() {
+        const quotient = config.question.currentIndex / config.question.data.length;
+        const percentage = parseInt(quotient * 100);
+        elemProgressBarText.html(`${percentage}%`);
+        elemProgressBar.attr('value', percentage);
+        elemProgressBar.attr('max', 100);
+      },
+      
+      // UI visibility of percentage bar:
+      visibility: function(visibility) {
+        if (visibility) {
+          elemProgressBar.removeClass('hidden');
+          elemProgressBarText.removeClass('hidden');
+        } else {
+          elemProgressBar.addClass('hidden');
+          elemProgressBarText.addClass('hidden');
+        }
+      }
+    },
+    
+    // UI navigation arrow elements: a way to update their visibility:
+    navArrows: {
+      visibility: function(visibility) {
+        visibility ? elemNavArrowsContainer.removeClass('hidden') : elemNavArrowsContainer.addClass('hidden');
+      }
+    },
+    
+    // UI mass visibility update (loop an array of UI elements & set visibility state all at once):
+    massUpdateVisibility: function(arr, state) {
+      arr.forEach((element, index, arr) => ui[element].visibility(state));
+    },
+    
+    // UI mode: is the game in play or is it finished? Set visibility of UI elements accordingly:
+    mode: {
+      game: {
+        inPlay: function() {
+          ui.massUpdateVisibility(config.dom.uiArr, true);
+        },
+        finished: function() {
+          ui.massUpdateVisibility(config.dom.uiArr, false);
+        }
+      }
+    }
+  };
+  
+  
+  /* Save to file (enable user to download results):
+   ***************************************************/
+  
+  var saveToFile = {
+    blobSave: function(returnedHTMLTags) {
+      let saveData = (function () {
+        let a = document.createElement('a');
+        document.body.appendChild(a);
+        a.style = 'display: none';
+        return function (data, fileName) {
+          const blob = new Blob([data], {type: 'octet/stream'}), url = window.URL.createObjectURL(blob);
+          a.href = url;
+          a.download = fileName;
+          a.click();
+          window.URL.revokeObjectURL(url);
+        };
+      }());
+      let data = `
+          <head>
+          <title>Quiz results</title>
+          <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat');
+            body {
+              font-family: 'Montserrat', sans-serif;
+              padding: 20px;
+            }
+            .elem-div-results-container {
+              border: 1px solid #DDD;
+              border-radius: 20px;
+              left: 0;
+              margin-left: auto;
+              margin-right: auto;
+              padding: 10px;
+              position: absolute;
+              right: 0;
+              width: 50vw;
+            }
+            .elem-h1-center, .elem-h2-center, .elem-p-center {
+              text-align: center;
+            }
+            table {
+              border-collapse: collapse;
+              border-spacing: 0;
+            }
+            td, th {
+              border: 1px solid #EEE;
+              padding: 5px;
+              text-align: center;
+              width: 25%;
+            }
+            th {
+              border: 0;
+            }
+            tr:nth-child(even) {
+              background: #F9F9F9;
+            }
+            .result-mark-cross {
+              color: red;
+            }
+            .result-mark-tick {
+              color: #00CC00;
+            }
+          </style>
+          </head>
+          <body>
+            <h1 class="elem-h1-center">${uiLabels.main.end.results}</h1>
+            <h2 class="elem-h2-center">${uiLabels.main.end.score}: ${config.question.score}/${config.question.data.length} (${userScore.format.asPercentage()}%)</h2>
+          ${returnedHTMLTags}
+          </body>`, 
+          fileName = "quiz-results.html";
+          saveData(data, fileName);
+    }
+  }
+  
+  
+  /* Utilities:
+   ***************************************************/
+  
+  var utilities = {
+    
+    // Get letter of answer from its index from alphabet stored in config object:
+    getLetter: function(index) {
+      return config.dictionaries.alphabet[index];
+    },
+    
+    // Make a string title case:
+    toTitleCase: function(str) {
+      return str.replace(/\w\S*/g, (txt) => `${txt.charAt(0).toUpperCase()}${txt.substr(1).toLowerCase()}`);
+    }
+  };
+  
+  
+  /* Event listeners:
+   ***************************************************/
+  
+  elemAnswersContainer.on('click', function(e) {
+    if (e.target.id.indexOf('elem-div-ans-') >= 0) {
+      answer.userAnswer.check(e.target.id.split('-')[3]);
+    }
+  });
+  
+  // Click event for navigation button (previous):
+  elemButtonNavPrev.on('click', function() {
+    question.prev();
+  });
+  
+  // Click event for navigation button (next):
+  elemButtonNavNext.on('click', function() {
+    if (!question.hasUserAnswer()) {
+      let skipConfirmation = confirm(uiLabels.main.general.skipQuestion);
+      if (skipConfirmation) question.next();
+    } else {
+      question.next();
+    }
+  });
+  
+  
+  /* Game reset:
+   ***************************************************/
+  
+  function gameReset() {
+    config.question.score = 0;
+    config.question.currentIndex = 0;
+    config.question.retake = true;
+  }
+  
+  
+  /* Initialize questioning / put game in play:
+   ***************************************************/
+  
+  function init() {
+    question.populate();
+    ui.mode.game.inPlay();
+  }
+  
+  
+  /* Add event listener to begin quiz button:
+   ***************************************************/
+  
+  function addBeginQuizListener() {
+    $('#elem-button-begin-quiz').on('click', function() {
+      elemQuestion.html(uiLabels.main.general.loading);
+      elemAnswersContainer.html(loader);
+      init(); 
+    });
+  }
+  
+  
+  /* :
+   ***************************************************/
+  
+  function getData() {
+    if (!config.question.retake) {
+      $.getJSON(config.api.uri).then((data) => {
+        question.getAll(data);
+        addBeginQuizListener();
+      }).catch((err) => {
+        console.error(err);
+      });
+     } else { 
+       question.removeAllUserAnswers();
+       addBeginQuizListener();
+       elemQuestion.html(`<h1 class="elem-title-screen-title">${uiLabels.main.general.title}</h1>`);
+     }
+  }
+  
+  
+  /* When DOM is ready load the title screen:
+   ***************************************************/
+  
+  $(document).ready(function() { screen.title(); });
+}());
+</script>
+</body>
+</html>		

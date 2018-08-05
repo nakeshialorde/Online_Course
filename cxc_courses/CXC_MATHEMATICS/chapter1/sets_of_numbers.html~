@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sets of Numbers</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'><link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Tutors246 Online Course Portal</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+  	  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+     <!-- Material Design icon font -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        .button {
+            background-color: #024457;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            .button:hover {
+                opacity: 1
+            }
+    </style>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+.accordion {
+  margin: 0 0 30px;
+  border: 1px solid #b8d7e0;
+  border-bottom-color: #ababab;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.accordion-header {
+  background-color: #e3e3a9;
+  border-bottom: 1px solid #e3e3a9;
+  font-size: 1.5em;
+}
+
+.accordion-active {
+  background-color: #b9b97a;
+}
+
+.accordion dd {
+  overflow: hidden;
+  max-height: 0;
+  padding-left: 1em;
+  transition: max-height 1s ease-in-out;
+  font-size: 1.125em;
+  max-width: 40em;
+}
+
+.accordion .slide-up {
+  transition: max-height 0.1s;
+}
+
+.accordion .active {
+  display: block;
+  max-height: 800px;
+  padding: 1em;
+}
+
+.accordion dt {
+  cursor: pointer;
+  padding: .5em .75em;
+}
+
+.accordion dt:before {
+  content: " \25B6";
+  padding-right: .25em;
+}
+
+.accordion .accordion-active:before {
+  content: " \25BE";
+  padding-right: .5em;
+}
+
+.accordion .accordion-active:hover {
+  cursor: default;
+}
+
+/* end accordion */
+/* basic style */
+.defin {
+  font: 100%/1.5 AvenirNextCondensed-Regular, "Lucida Grande", Corbel, "Trebuchet Ms", sans-serif;
+  margin: 0;
+  padding: 2em 5% 0;
+  color: #101718;
+  background-color: #f0fbff;
+}
+
+dt {
+  font-family: AvenirNextCondensed-DemiBold, "Lucida Grande", Corbel, "Trebuchet Ms", sans-serif;
+  color: #1f2a2e;
+}
+
+footer {
+  clear: both;
+  margin-top: 20em;
+}
+
+footer a {
+  display: block;
+  padding: 1em .5em;
+  text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+
+	  <div class="wrapper">
+        <div class="sidebar" data-color="purple">
+  <div class="sidebar-wrapper">
+               					
+					<br clear="all">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="pe-7s-graph"></i>
+                            <p>Sets of Numbers</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Enrolled Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <i class="pe-7s-study"></i>
+                            <p>Progress Report</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://tutors246.com/ourtutors.html">
+                            <i class="pe-7s-notebook"></i>
+                            <p>Schedule A Tutor</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Course_List.html">
+                            <i class="pe-7s-culture pe-fw"></i>
+                            <p>Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="note.html">
+                            <i class="fa fa-pencil"></i>
+                            <p>Notepad</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html">
+                            <i class="pe-7s-config pe-fw"></i>
+                            <p>Admin Login</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a class="navbar-brand" href="concept_of_vectors.html" style="color: #337ab7;">Sets of Numbers</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-dashboard"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-sm hidden-xs"></b>
+                                    <span class="notification hidden-sm hidden-xs" style="color: #337ab7;">5</span>
+                                    <p class="hidden-lg hidden-md">
+                                        5 Notifications
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#">Notification 1</a></li>
+                                    <li><a href="#">Notification 2</a></li>
+                                    <li><a href="#">Notification 3</a></li>
+                                    <li><a href="#">Notification 4</a></li>
+                                    <li><a href="#">Another notification</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-search"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Search</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="">
+                                    <p style="color: #337ab7;">Account</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p style="color: #337ab7;">
+                                        Courses
+                                        <b class="caret"></b>
+                                    </p>
+
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#" style="color: #337ab7;">Home</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Enrolled Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Progress Report</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Available Tutors</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p style="color: #337ab7;">Log out</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg hidden-md"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+          
+<div class="wrapper">
+<h1 style="font-size:48px;"><center><b>Sets of Numbers</center></h1> 
+
+<section class="defin">
+<dl id="accordion" class="accordion">
+  <dt class="accordion-header">Natural Numbers</dt>
+  <dd>The set of counting numbers, that is, &#8469;={1,2,3,4...}.</dd>
+  <dt class="accordion-header">Whole Numbers</dt>
+  <dd>The set of positive integers or zero.</dd>
+  <dt class="accordion-header">Integers</dt>
+  <dd>The set consisting of the positive and negative whole numbers and zero, &#8484;={...,-2,-1,0,1,2...}. All integers are rational numbers.</dd>
+  <dt class="accordion-header">Rational Numbers</dt>
+  <dd>Numbers that can be expressed as the quotient of two integers (that it any number that can be expressed as a fraction). For examples, <sup>7</sup>&#8260;<sub>3</sub>, <sup>5</sup>&#8260;<sub>11</sub>, <sup>-5</sup>&#8260;<sub>13</sub> or <sup>p</sup>&#8260;<sub>q</sub>, where p and q are integers, q&#8800;. </dd>
+  <dt class="accordion-header">Irrational Numbers</dt>
+  <dd>A number that cannot be represented as an exact ratio of two integers. For examples, &#960; or &#8730;2.
+  <dt class="accordion-header">Real Numbers</dt>
+  <dd>The union of the set of rational numbers and the set of irrational numbers. Real numbers are represented by the symbol &#8477;.
+  <dt class="accordion-header">Inclusion Relations</dt>
+  <dd>The N</dd>
+  <dt class="accordion-header">Sequences of Numbers</dt>
+  <dd>The set consisting of the positive and negative whole numbers and zero, &#8484;={...,-2,-1,0,1,2...}.</dd>
+</dl>
+</section>
+<!-- <footer><small><a href="https://codepen.io/atelierbram/pen/FsGhm">on CodePen</a></small></footer> -->
+
+
+<script type="text/javascript" >
+/* fork of this thing: 
+* http://jsfiddle.net/devinwalker/drpKm/3096/light/
+* which is inspired by: https://css-tricks.com/snippets/jquery/simple-jquery-accordion/
+*/
+(function($) {
+  //Show first panel
+  $(".accordion > dd:first-of-type").addClass("active");
+  //Add active class to first panel
+  $(".accordion > dt:first-of-type").addClass("accordion-active");
+  //Handle click function
+  jQuery(".accordion > dt").on("click", function() {
+    //this clicked panel
+    $this = $(this);
+    //the target panel content
+    $target = $this.next();
+
+    //Only toggle non-displayed
+    if(!$this.hasClass("accordion-active")){
+      //slide up any open panels and remove active class
+      $this.parent().children("dd").addClass("slide-up");
+      $this.parent().children("dd").removeClass("active");
+
+      //remove any active class
+      jQuery(".accordion > dt").removeClass("accordion-active");
+
+      //add active class
+      $this.addClass("accordion-active");
+      //slide down target panel
+      $target.addClass("active");
+      $target.removeClass("slide-up");
+    }
+
+    return false;
+  });
+
+})(jQuery);
+</script>
+</body>
+</html>		

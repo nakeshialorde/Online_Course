@@ -1,0 +1,1036 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Vectors & Matrices</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'><link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Tutors246 Online Course Portal</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+  	  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css">
+     <!-- Material Design icon font -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .button {
+            background-color: #024457;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+            .button:hover {
+                opacity: 1
+            }
+    </style>
+    <style>
+
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        ::-moz-scrollbar {
+            display: none;
+        }
+
+        
+        header {
+            position: fixed;
+            top: 0;
+            height: 250px auto !important;
+            width: 100% auto !important;
+            pointer-events: none;
+        }
+
+            header .title {
+                position: absolute;
+                top: 50% auto !important;
+                left: 80px auto !important;
+                color: white;
+                font-size: 40px;
+                line-height: 40px;
+                margin-top: -20px auto !important;
+                transition: .3s all ease;
+                z-index: 999;
+                font-family: Roboto;
+                font-weight: 300;
+                text-transform: capitalize;
+            }
+
+            header .header-bg {
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                background: #024457;
+                transition: .3s all ease;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            header.active .title {
+                font-size: 20px;
+                -webkit-transform: translate(-30px, -85px);
+                -moz-transform: translate(-30px, -85px);
+                -ms-transform: translate(-30px, -85px);
+                -o-transform: translate(-30px, -85px);
+                transform: translate(-30px, -85px);
+                transition: .3s all ease .15s;
+            }
+
+            header.active .header-bg {
+                -webkit-transform: translateY(-170px);
+                -moz-transform: translateY(-170px);
+                -ms-transform: translateY(-170px);
+                -o-transform: translateY(-170px);
+                transform: translateY(-170px);
+                background: #024457;
+                transition: .3s all ease .15s;
+            }
+
+            header.active .cta-ctr {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+                transition: .5s all ease .2s;
+            }
+
+            header.active .cta:after {
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+                transition: .5s all ease .2s;
+                box-shadow: 0 -8px 12px 1px rgba(0, 0, 0, 0.15);
+            }
+
+            header .cta-ctr {
+                position: absolute;
+                top: 50px;
+                right: 50px;
+                bottom: 0;
+                -webkit-transform-origin: bottom center;
+                -moz-transform-origin: bottom center;
+                -ms-transform-origin: bottom center;
+                -o-transform-origin: bottom center;
+                transform-origin: bottom center;
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                transition: .3s all ease;
+            }
+
+            header .cta {
+                width: 60px auto !important;
+                height: 60px auto !important;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .3s all ease;
+                pointer-events: auto;
+                position: relative;
+            }
+
+                header .cta:after {
+                    content: "";
+                    box-shadow: 0 8px 12px 1px rgba(0, 0, 0, 0.15);
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/111167/arrow-down.svg") no-repeat center 14px transparent;
+                    -webkit-transform: rotate(90deg);
+                    -moz-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                    transition: .3s all ease;
+                }
+
+
+        .content-ctr {
+            width: 100% auto !important;
+            height: 100% auto !important;
+            background: white;
+            overflow: scroll;
+            position: relative;
+        }
+
+            .content-ctr.active .header-content-ctr {
+                height: 0% auto !important;
+                transition: .3s height ease .45s;
+            }
+
+                .content-ctr.active .header-content-ctr .title {
+                    transition: .3s all ease;
+                    opacity: 0;
+                    -webkit-transform: translateY(-20px);
+                    -moz-transform: translateY(-20px);
+                    -ms-transform: translateY(-20px);
+                    -o-transform: translateY(-20px);
+                    transform: translateY(-20px);
+                }
+
+                .content-ctr.active .header-content-ctr .par {
+                    transition: .3s all ease .05s;
+                    opacity: 0;
+                    -webkit-transform: translateY(-20px);
+                    -moz-transform: translateY(-20px);
+                    -ms-transform: translateY(-20px);
+                    -o-transform: translateY(-20px);
+                    transform: translateY(-20px);
+                }
+
+            .content-ctr.active .main-content-ctr {
+                height: 100%;
+                overflow: scroll;
+            }
+
+                .content-ctr.active .main-content-ctr .title {
+                    transition: .3s all ease .65s;
+                    -webkit-transform: translateY(0px);
+                    -moz-transform: translateY(0px);
+                    -ms-transform: translateY(0px);
+                    -o-transform: translateY(0px);
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+                .content-ctr.active .main-content-ctr .par {
+                    transition: .3s all ease .7s;
+                    -webkit-transform: translateY(0px);
+                    -moz-transform: translateY(0px);
+                    -ms-transform: translateY(0px);
+                    -o-transform: translateY(0px);
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+
+            .content-ctr .title {
+                font-family: Roboto;
+                margin-bottom: 30px;
+                font-size: 34px;
+                color: #024457;
+                transition: .3s all ease;
+            }
+
+            .content-ctr .par {
+                font-family: Roboto;
+                font-size: 18px;
+                line-height: 1.5;
+                font-weight: 300;
+                color: #777;
+            }
+
+            .content-ctr .header-content-ctr {
+                position: relative;
+                height: 100% auto !important;
+                overflow: hidden;
+                transition: .3s height ease;
+            }
+
+                .content-ctr .header-content-ctr .title {
+                    transition: .3s all ease .15s;
+                }
+
+                .content-ctr .header-content-ctr .par {
+                    transition: .3s all ease .3s;
+                }
+
+            .content-ctr .header-content {
+                position: absolute;
+                right: 0;
+                bottom: 110px;
+                left: 80px;
+            }
+
+            .content-ctr .main-content-ctr {
+                position: relative;
+                min-height: 0%;
+                transition: .3s height ease;
+                overflow: hidden;
+            }
+
+                .content-ctr .main-content-ctr .title,
+                .content-ctr .main-content-ctr .par {
+                    opacity: 0;
+                    -webkit-transform: translateY(20px);
+                    -moz-transform: translateY(20px);
+                    -ms-transform: translateY(20px);
+                    -o-transform: translateY(20px);
+                    transform: translateY(20px);
+                }
+
+            .content-ctr .main-content {
+                position: relative;
+                top: 50%;
+                right: 0;
+                left: 0;
+                margin-left: 50px;
+                margin-top: -59px;
+            }
+            </style>
+              
+ <style>
+.cards {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  max-width: 40em;
+  margin: 7% auto 0;
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 0 40px #000;
+  -webkit-transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+          transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  transition: background 0.4s linear, -webkit-transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s;
+  transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.4s linear;
+  transition: transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.4s linear, -webkit-transform 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.card :last-child {
+  margin-bottom: 0;
+}
+.card--next {
+  z-index: 5;
+  -webkit-transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+          transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+}
+.card--out {
+  -webkit-animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+          animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+  -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+          transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  z-index: 1;
+  background: #fff;
+}
+@-webkit-keyframes card-out {
+  0% {
+    z-index: 20;
+    -webkit-transform: translateY(0px) rotate(-4deg);
+            transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+  }
+  80% {
+    z-index: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  }
+}
+@keyframes card-out {
+  0% {
+    z-index: 20;
+    -webkit-transform: translateY(0px) rotate(-4deg);
+            transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    -webkit-transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+            transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+  }
+  80% {
+    z-index: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  }
+}
+.card--current {
+  cursor: auto;
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+      -ms-user-select: auto;
+          user-select: auto;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  background: #fff;
+  -webkit-transform: rotate(-1deg) translateX(0%) scale(1);
+          transform: rotate(-1deg) translateX(0%) scale(1);
+}
+h1 {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  padding: 40px;
+  background: #fff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+	  <div class="wrapper">
+        <div class="sidebar" data-color="purple">
+  <div class="sidebar-wrapper">
+               					
+					<br clear="all">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="pe-7s-graph"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Enrolled Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <i class="pe-7s-study"></i>
+                            <p>Progress Report</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://tutors246.com/ourtutors.html">
+                            <i class="pe-7s-notebook"></i>
+                            <p>Schedule A Tutor</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Course_List.html">
+                            <i class="pe-7s-culture pe-fw"></i>
+                            <p>Courses</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="note.html">
+                            <i class="fa fa-pencil"></i>
+                            <p>Notepad</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html">
+                            <i class="pe-7s-config pe-fw"></i>
+                            <p>Admin Login</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a class="navbar-brand" href="concept_of_vectors.html" style="color: #337ab7;">Concept of a Vector</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-dashboard"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-sm hidden-xs"></b>
+                                    <span class="notification hidden-sm hidden-xs" style="color: #337ab7;">5</span>
+                                    <p class="hidden-lg hidden-md">
+                                        5 Notifications
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#">Notification 1</a></li>
+                                    <li><a href="#">Notification 2</a></li>
+                                    <li><a href="#">Notification 3</a></li>
+                                    <li><a href="#">Notification 4</a></li>
+                                    <li><a href="#">Another notification</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-search"></i>
+                                    <p class="hidden-lg hidden-md" style="color: #337ab7;">Search</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="">
+                                    <p style="color: #337ab7;">Account</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p style="color: #337ab7;">
+                                        Courses
+                                        <b class="caret"></b>
+                                    </p>
+
+                                </a>
+                                <ul class="dropdown-menu" style="color: #337ab7;">
+                                    <li><a href="#" style="color: #337ab7;">Home</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Enrolled Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Progress Report</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Courses</a></li>
+                                    <li><a href="#" style="color: #337ab7;">Available Tutors</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p style="color: #337ab7;">Log out</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg hidden-md"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+          
+<div class="wrapper">
+<h1 style="font-size:48px;"><center><b>Concept of a Vector</center></h1>  
+<i><div style="text-align: center;"><caption>Click on the card behind</caption></div></i>
+<ul class="cards">
+  
+  <li class="card">
+  <h1><div style="text-align: center;">Vectors</div></h1>
+    
+    <p>A quantity <b>a</b> (represented by arrows) that have both a length (magnitude) and direction. The length of a vector is the distance from its initial point P to its final point Q (These points can also be represented by A for head and B for tail). A vector is represented by <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>, the arrow above the components indicates that it is a vector quantity.<br />
+      <center><b>Example of a Vector </b><br /><img src="https://byjus.com/formulas/wp-content/uploads/2016/04/Vector-Formulas.png" alt=""><br /><caption>The tail of a vector is its origin and the head is the endpoint.Vectors can be in component form (a,b) or in the <a href="position_vector.html">coordinate plane.</caption></a></center></p>
+  </li>
+  
+  <li class="card">
+    <div style="text-align: center;"><h1>Magnitude</h1></div>
+    <p>The magnitude of a vector <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> refers to its length and is represented by <br>&#8739;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>&#8739;.The length of a vector is determined by <a href="pythagoras_theorem.html">Pythagoras'
+Theorem </a> whereby <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = <span>&#8730;</span>x<sup>2</sup> &#43; y<sup>2</sup>. After finding the square root of the two components which can also be represented by <span>&#8730;</span>a<sup>2</sup> &#43; b<sup>2</sup>, the result is simply added to get the magnitude or length of the vector in component form or in the plane.<center><img src="https://www.mathsisfun.com/algebra/images/vector-mag-dir.svg" alt=""><br><br><i><caption>The magnitude is the length from the tail to the head of the vector v&#8407;.</caption></i></center><br clear="all"><br clear="all"><br clear="all"><br clear="all"></p> 
+  </li>
+  
+  
+  <li class="card">
+   <div style="text-align: center;"> <h1>Unit Vector</h1></div>
+    <p>Vector of length 1 or &#8739;u&#8739; = 1. A unit vector can start with any vector except the zero vector. The formula for the unit vector <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is obtained by dividing a vector by a magnitude, <b>u</b> = AB&#8407; &#x2215; &#8739;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>&#8739;.<caption>Checking to ensure that the length of <b>u</b> is really 1, &#8739;<b>u</b>&#8739; = &#x2223;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> &#8725; &#8739;AB&#8739; = &#8739; <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> &#8725;<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> &#8739; = 1.<center><img src="http://mathonline.wdfiles.com/local--files/standard-unit-vectors/Screen%20Shot%202014-06-13%20at%2012.49.19%20PM.png" alt=""></center><br clear="all"><br></p>
+</li>
+  
+<li class="card">
+<div style="text-align: center;"><h1>Direction</h1></div>
+<p>The direction of a vector <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is obtained by finding the angle of the vector. The angle is obtained using the following formula, &#952; = tan <sup>-1</sup> &#8333;b <span>&#8725;</span> a&#8334;. <br clear="all"><center><img src="https://kullabs.com/img/note_images/Ri66U342gjdy1GKp.jpg" alt="" width="450px" height="250px"></center></p>
+<br><br clear="all"><br clear="all"><br clear="all">
+  
+  <li class="card">
+<div style="text-align: center;"><h1>Scalar</h1></div>
+
+    <p>A scalar is a real number, while vectors are not real numbers. A scalar has a size or length but no direction, while vectors have both a length and direction. <br /> <div style="text-align: center;"><b>Scalar Multiples</b> </div><br> Multiplying a scalar by a positive number does not affect its direction of the vector, just its length. However, multiplying by a negative number changes the direction to the opposite side, multiplying by 0 causes a vector to lose all direction.<center><img src="https://dj1hlxw0wr920.cloudfront.net/userfiles/wyzfiles/12bcd28f-90fb-439e-8f66-e926b8b5bfd8.gif" alt="" width="250px" height="200px"></center></p><br clear="all">
+  </li>
+  
+     <li class="card">
+<div style="text-align: center;"><h1>Parallel Vectors</h1></div>
+
+    <p>A parallel vector or zero vector comprises of two vectors with the same direction and are scalar multiples of each other.The cross product of a vector determines whether it is parallel, if it equals 0 or <b>a</b>&#215;<b>b</b> = 0. The scalar multiply or cross product of two or more vectors is represented by the formula <img src="http://tutorial.math.lamar.edu/Classes/CalcII/CrossProduct_files/eq0004P.gif" alt="" height="80px" width="100px"> = (a<sub>2</sub>b<sub>3</sub> &#8722; a<sub>3</sub>b<sub>2</sub> ) &#8722; (a<sub>1</sub>b<sub>3</sub> &#8722; a<sub>3</sub>b<sub>1</sub>) &#43; (a<sub>1</sub>b<sub>2</sub> &#8722; a<sub>2</sub>b<sub>1</sub>). <br>&#8756; <b>a</b> = (1,2,3), <b>b</b> = (3,2,1) then <b>a</b>&#215;<b>b</b> = (2 x 1 - 3 x 2) - (1 x 1 - 3 x 3) + (1 x 2 - 2 x 3) = (-4) - (-8) + (-4) = 0.<center><img src="https://www.physics.uoguelph.ca/tutorials/vectors/66new.gif" alt="" width="250px" height="200px"></center></p>
+  </li>
+  
+    <li class="card">
+<div style="text-align: center;">    <h1>Equal Vectors</h1></div>
+
+    <p>Like the parallel vector, equal vectors have the same direction, however, they also have the same magnitude. With an equal vector, <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>CD</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>. Therefore, where <img src="http://tutorial.math.lamar.edu/Classes/CalcII/CrossProduct_files/eq0004P.gif" alt="" height="80px" width="100px">
+<b>a</b> = (2; 8; 1) and <b>b</b> = (2; 8; 1) are equal.
+<br><b>Solution:</b>
+<br>Verify the equality of components of vectors
+<br>a<sub>1</sub> = b<sub>1</sub> = 2
+<br>a<sub>2</sub> = b<sub>2</sub> = 8
+<br>a<sub>3</sub> = b<sub>3</sub> = 1
+<br clear="all">
+<center><img src="http://www.nabla.hr/EqualVectors.gif" alt=""></center>
+    </p><br clear="all">
+  </li>
+    <li class="card">
+<div style="text-align: center;">    <h1>Inverse Vectors</h1></div>
+
+    <p>Inverse vectors have the same length (magnitude) but the direction of one vector is in the opposite direction. Each vector is therefore the inverse of the other. <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>BA</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>-AB</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math>
+
+<center><img src="https://img.sangakoo.com/img/img/vecop.gif" alt="" width="250px" height="200px"></center></p><br clear="all"><br clear="all"><br clear="all"><br clear="all"><br><br clear="all">
+  </li>
+</ul>
+
+<br clear="all"><br clear="all"><br><br clear="all"><br clear="all">
+            
+<div style="text-align: center;"><font size="25px"><b>End of Section Quiz</b></font></div>
+
+
+<div style="text-align: center;"><div class="quiz"><br clear="all"><button id="test_quiz" value="Start">Start</button>
+
+
+
+
+
+
+
+<form id="quiz" name="quiz" action="concept_of_vectors.html" method="POST"><br clear="all"><br clear="all">
+<ol>
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+
+<li>
+<label>Given that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>P</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (-1,2,5) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>Q</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> = (3,-7,9), <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mover>
+    <mi>PQ</mi>
+    <mo mathsize="50%">&rarr;</mo>
+    </mover>
+</math> is:</label><br />
+
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+<input type="radio" id="answer1" value="" />
+</li>
+
+</ol>
+</form>
+</div></div>
+
+<div style="text-align: center;">
+<div class="container">
+  <h2>Chapter Progress</h2>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+      50%<span class="sr-only">50% Complete</span>
+    </div>
+  </div>
+</div></div>
+
+<br />
+<div style="text-align: right;"><p align="bottom-right"> 
+<div class="bottomright">
+<a href="position_vectors.html"> 
+<button class="button">Continue</button></a>
+</div>                       
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$.fn.commentCards = function(){
+
+  return this.each(function(){
+
+    var $this = $(this),
+        $cards = $this.find('.card'),
+        $current = $cards.filter('.card--current'),
+        $next;
+
+    $cards.on('click',function(){
+      if ( !$current.is(this) ) {
+        $cards.removeClass('card--current card--out card--next');
+        $current.addClass('card--out');
+        $current = $(this).addClass('card--current');
+        $next = $current.next();
+        $next = $next.length ? $next : $cards.first();
+        $next.addClass('card--next');
+      }
+    });
+
+    if ( !$current.length ) {
+      $current = $cards.last();
+      $cards.first().trigger('click');
+    }
+
+    $this.addClass('cards--active');
+
+  })
+
+};
+
+$('.cards').commentCards();
+</script>
+</body>
+</html>		
