@@ -105,42 +105,32 @@
 
 <body>
     <div class="bg-img">
-        <br /><center><img src="img/logo.png.png" height="auto" width="auto" /><br /><h2><medium>Welcome to our online learning community!</medium></center></h2>
+        <br /><center><img src="img/logo.png.png" height="auto" width="auto" /><br /><h2><medium>Welcome to our Online Learning Community!</medium></center></h2>
 
-        <form action="index.php">
+        <form action="index.php" method="POST" id="signup">
             <div class="container">
                 <h1><center>Sign Up Today!</center></h1>
 
                 <h1>Steps:</h1>
                 <ol>
                     <li>
-                        Select the Course of your choose.
+                        Select the Course of Your Choose.
                     </li>
                     <li>
-                        Make an online payment.
+                        Make an Online Payment.
                     </li>
                     <li>
-                        Register and login!
+                        Register and Login!
                     </li>
                     <li>
-                        Start your online course.
+                        Start your Online Course.
                     </li>
                 </ol>
                 
                 <form action="../cxc_courses/CXC_MATHEMATICS/index.php" method="post">
 
-                    <label for="email"><b>Course List </b></label><br />
-                    <select name="to_user" class="form-control">
-                        <option value="pick">בחר מהרשימה</option>
-                        <?php
-                        $sql = mysqlii_query($con, "SELECT courselist From Course");
-                        $row = mysqlii_num_rows($sql);
-                        while ($row = mysqlii_fetch_array($sql)){
-                        echo "
-                        <option value='". $row[' Course'] ."'>" .$row['CourseID'] ."</option>" ;
-                        }
-                        ?>
-                    </select>
+                    <label for="courselist"><b>Course List </b></label><br />
+                    
                     <select id="cd" name="cd">
 
                         <?php
@@ -160,7 +150,7 @@
                         $cdTitle=$cdrow["cdCourse"];
                         echo "
                         <option>
-                            $cdCourse
+                            $cd
                         </option>";
 
                         }
@@ -180,7 +170,7 @@
 
                     <p></p>
 
-                    <label for="email"><b>Level </b></label><br />
+                    <label for="level"><b>Level </b></label><br />
                     <select>
                         <option value="cxc" id="cxc">CXC</option>
                         <option value="common_entrance" id="common_entrance">Common Entrance</option>
