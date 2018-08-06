@@ -104,7 +104,7 @@ function display_error() {
 <div class="header">
 	<h2>Register</h2>
 </div>
-<form method="post" action="index.php">
+<form method="post" action="register.php">
 	<div class="input-group">
 		<label>Email</label>
 		<input type="email" name="email" value="">
