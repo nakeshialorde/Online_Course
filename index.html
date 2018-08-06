@@ -104,34 +104,7 @@
                 <form action="../cxc_courses/CXC_MATHEMATICS/index.php" method="post">
 
                     <label for="courselist"><b>Course List</b></label><br />
-                                
-
-                        <?php
-
-                        $mysqliserver="localhost";
-                        $mysqliusername="root";
-                        $mysqlipassword="";
-                        $link=mysqli_connect(localhost, $root) or die ("Error connecting to mysqli server: ".mysqli_error());
-
-                        $dbname = 'root';
-                        mysqli_select_db($root, $link) or die ("Error selecting specified database on mysqli server: ".mysqli_error());
-
-                        $cdquery="SELECT courselist FROM tutors246_login";
-                        $cdresult=mysqli_query($cdquery) or die ("Query to get data from firsttable failed: ".mysqli_error());
-
-                        while ($cdrow=mysqli_fetch_array($cdresult)) {
-                        $cdTitle=$cdrow["cdCourse"];
-                        echo "
-                        <option>
-                            $cd
-                        </option>";
-
-                        }
-
-                        ?>
-
-                    </div>
-
+                      
                     <select onclick="courselist()">
                         <option value="../cxc_courses/CXC_MATHEMATICS/index.php">CSEC 1278 - Mathematics</option>
                         <option value="english_language">CSEC 1279 - English Language</option>
