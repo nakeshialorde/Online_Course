@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Login Form</title>
+
+<style>
         body,
         html {
             height: 100%;
@@ -41,7 +45,7 @@
 
         input[type=text],
         input[type=password] {
-            width: 100%;
+            width: auto%;
             padding: 15px;
             margin: 5px 0 22px 0;
             border: none;
@@ -86,79 +90,38 @@
     <br />
     <div align="center">
     <img src="img/logo.png.png" align="center" height="auto" width="auto" />
+    <br>
+    <h1><b>Welcome To Our Online Learning Community!<b></h1>
     </div>
-    <br />
-    <h4>
-        <large>
-            <center>Welcome To Our Online Learning Community!</center>
-        </large>
-    </h4>
+  
+  <div style="visibility: hidden;" id="logged-in">
+    <p><b>Logged in as:</b></p>
+    <div id="logged-in-list"></div>
+  </div>
 
-    
-        <form action="dashboard.html" method="POST" id="login">
-            <div class="container" id="loggedin">
-                <h1>
-                    <center>Login</center>
-                </h1>
+    <form id="login-form">
+    <div style="text-align: center;">
+    <div class="container" id="loggedin">
 
-                <label for="email" align="left"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="on">
+    <h2>Login</h2>
 
-                <label for="password" align="left"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="password" required autocomplete="on">
-                <input type="checkbox" id="showpassword">
+    <label for="username">Username:</label><br>
+    <input type="text" placeholder="Enter username..." id="username" size="50 />
+    <br clear="all">
+       
+    <label for="password">Password:</label><br>
+    <input type="password" placeholder="Enter password..." id="password" size="50 />
+    <br clear="all">
+       
+    <input type="submit" value="Login" />
+     </div>
+      </div>
+  </form>
+      <p><center><a href="resetpassword.php"><small>Reset Password</small></a></center></p>
 
-                <label for "showpassword"> Show password</label><br />
-                <button type="submit" class="btn">Login</button>
-            </div>
-</form>
-   
-    
-
-        <p>
-            <center>Forgot Password!<a href="resetpassword.php">Reset Password</a></center>
-        </p>
-
-    </div>
-
-<script type="text/javascript">
-    (function () {
-        var form = document.getElementById('login');
-
-        addEvent(form, 'submit', function (e) {
-            e.preventDefault();
-
-            var elements = this.elements;
-            var email = elements.email.value;
-            var msg = 'Welcome' + 'email';
-            document.getElementById('loggedin').textContent = msg;
-
-        });
-
-    }());
-</script>
-
-<script>
-    (function () {
-        var pwd = document.getElementById('password');
-        var chk = document.getElementById('showpassword');
-
-        addEvent(chk, 'change', function (e) {
-            var target = e.target || e.srcElement;
-            try {
-                if (target.checked) {
-                    pwd.type = 'text';
-                } else {
-                    pwd.type = 'password';
-                }
-            } catch (error) {
-                alert('This browser cannot switch type');
-            }
-        });
-
-    }());
-</script>
- <script>
+  <!-- the JavaScript code should go as contents of this tag -->
+ 
+  <script>
 // store the IDs of all logged in users in here
 var loggedusers = [];
 
@@ -168,21 +131,21 @@ var loggedusers = [];
 var users = [{
   // ID of the user
   id: 1,
-  // email of the user
-  email: 'tutors246@gmail.com',
+  // username of the user
+  username: 'user1',
   // password of the user, note that this should obviously be hashed on the server-side
   // for PHP back-end: preferably hashed with 'password_hash' and compared using 'password_verify' if using PHP version 5.5 or newer
-  password: 'onlygod30',
+  password: 'a',
   // type of the user, currently using 'user', 'admin' and 'supplier', but technically it could be _anything_
   type: 'user'
 }, {
   id: 2,
-  email: 'admin1',
+  username: 'admin1',
   password: 'b',
   type: 'admin'
 }, {
   id: 3,
-  email: 'supplier1',
+  username: 'supplier1',
   password: 'c',
   type: 'supplier'
 }];
@@ -310,7 +273,7 @@ function login(username, password) {
       var user = users[index];
 
       // check if username and password match
-      if (email === user.email && password === user.password)
+      if (username === user.username && password === user.password)
       // set value of 'loggeduser' to the property value (user)
         loggeduser = user;
     }
@@ -405,7 +368,7 @@ function updatelist() {
       if (user) {
         // we create necessary elements to cover our logout functionality
         var p = document.createElement('P');
-        p.innerText = user.email;
+        p.innerText = user.username;
         var a = document.createElement('A');
         a.userid = id;
         a.href = '#';
@@ -435,7 +398,7 @@ function updatelist() {
 
 // add a new 'onsubmit' event listener to the '#login-form' node
 // this will be triggered each time the form is submitted via any method
-document.getElementById('login').addEventListener('submit', function(e) {
+document.getElementById('login-form').addEventListener('submit', function(e) {
   // prevent default browser behavior
   e.preventDefault();
 
@@ -446,31 +409,32 @@ document.getElementById('login').addEventListener('submit', function(e) {
   // check whether these elements return right stuff
   if (username_element && password_element) {
     // get the values of username and password
-    email = email_element.value;
+    username = username_element.value;
     password = password_element.value;
 
     // execute the 'login' function with the username and password filled in on the client
-    var user = login(email, password);
+    var user = login(username, password);
 
     // check whether the login was successful
     if (user !== false) {
       // reset the username input field
-      email_element.value = '';
+      username_element.value = '';
 
       // reset the password input field
       password_element.value = '';
 
       // alert the client that login was successful
-      alert('Logged in as ' + user.email + '.');
+      alert('Logged in as ' + user.username + '.');
     } else {
       // reset the password input field
       password_element.value = '';
 
       // alert the client that login was not successful
-      alert('Invalid email and/or password.');
+      alert('Invalid username and/or password.');
     }
   }
 });
 </script>
 </body>
+
 </html>
