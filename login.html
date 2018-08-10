@@ -1,78 +1,4 @@
-<?php
-
-require_once __DIR__ . '/login.sql';
-
-
-    // Start the session
-    session_start();
-
-    // Defines email and password. Retrieve however you like,
-    $email = "email";
-    $password = "password";
-
-    // Error message
-    $error = "";
-
-    // Checks to see if the user is already logged in. If so, refirect to correct page.
-    if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-        $error = "success";
-        header('Location: success.php');
-    }
-
-    // Checks to see if the email and password have been entered.
-    // If so and are equal to the email and password defined above, log them in.
-    if (isset($_POST['email']) && isset($_POST['password'])) {
-        if ($_POST['email'] == $email && $_POST['password'] == $password) {
-            $_SESSION['loggedIn'] = true;
-            header('Location: success.php');
-        } else {
-            $_SESSION['loggedIn'] = false;
-            $error = "Invalid username and password!";
-        }
-    }
-
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'tutors246');
-
-/* Attempt to connect to MySQL database */
-$link = mysqli_connect(localhost, root, '', tutors246);
-
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-?>
-
-<?php
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $email = stripcslashes($email);
-    $password = stripcslashes($password);
-    $email = mysql_real_escape_string($email);
-    $password = mysql_real_escape_string($password);
-
-    mysql_connect("localhost", "root", "");
-    mysql_select_db("tutors246_login");
-
-    $result = mysql_query("SELECT * FROM `login` WHERE `email` = '$email' and `password` = '$password'")
-    or die("Failed to query database".mysql_error());
-
-    $row = mysql_fetch_array($result);
-    if ($row['email'] == $email && $row['password'] == $password)
-    {
-        echo "Login Success! Welcome ".$row['email'];
-    }
-    else
-    {
-        echo "Failed to login!";
-    }
-    ?>
-
+<?php require_once('https://nakeshialorde.github.io/Online_Course/login_page.php'); ?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,7 +96,7 @@ if($link === false){
     </h4>
 
     
-        <form action="login.html" method="POST" id="login">
+        <form action="dashboard.html" method="POST" id="login">
             <div class="container" id="loggedin">
                 <h1>
                     <center>Login</center>
@@ -179,7 +105,7 @@ if($link === false){
                 <label for="email" align="left"><b>Email</b></label>
                 <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="on">
 
-                <label for="psw" align="left"><b>Password</b></label>
+                <label for="password" align="left"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="password" id="password" required autocomplete="on">
                 <input type="checkbox" id="showpassword">
 
@@ -233,8 +159,5 @@ if($link === false){
 
     }());
 </script>
-
-
 </body>
-
 </html>
