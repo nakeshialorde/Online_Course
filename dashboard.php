@@ -1,18 +1,13 @@
-<?php
-	$email = $_POST['email'];
+//$email = $_POST['email'];
 	$password = $_POST['password'];
-
 	$email = stripcslashes($email);
 	$password = stripcslashes($password);
 	$email = mysql_real_escape_string($email);
 	$password = mysql_real_escape_string($password);
-
 	mysql_connect("localhost", "root", "");
 	mysql_select_db("tutors246_login");
-
 	$result = mysql_query("SELECT * FROM `login` WHERE `email` = '$email' and `password` = '$password'")
 	or die("Failed to query database".mysql_error());
-
 	$row = mysql_fetch_array($result);
 	if ($row['email'] == $email && $row['password'] == $password)
 	{
@@ -22,7 +17,7 @@
 	{
 		echo "Failed to login!";
 	}
-	?>
+	//
 
 <!DOCTYPE html>
 <html lang="en">
@@ -200,6 +195,7 @@
 
 
             <div class="content">
+							<div><h4>Welcome <?php echo $_SESSION['username'];?></h4></div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4">

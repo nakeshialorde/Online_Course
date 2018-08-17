@@ -1,97 +1,197 @@
-<?php 
-session_start();
+<?php
+    session_start();
+    //Connect to database
+    $db = mysqli_connect("localhost", "root", "", "register");
 
-// connect to database
-$db = mysqli_connect('localhost', 'root', '', 'tutors246');
+    if(isset($_POST['register_btn'])){
+      $username = mysqli_real_escape_string($db, $_POST['username']);
+      $email = mysqli_real_escape_string($db, $_POST['email']);
+      $password = mysqli_real_escape_string($db, $_POST['password']);
+      $password2 = mysqli_real_escape_string($db, $_POST['password2']);
+      $course = mysqli_real_escape_string($db, $_POST['course']);
 
-// variable declaration
-$email    = "";
-$password = "";
-$first_name = "";
-$last_name = "";
-$enrolled_course = "";
-$errors   = array(); 
+      if ($password == $password2){
+        //Create User
+        $password = md5($password); //Hash password before storing for security purposes
+        $sql = "INSERT INTO login(username, email, password, course) VALUES('$username', '$email', '$password', '$course')";
+        mysqli_query($db, $sql);
+        $_SESSION['message'] = "You are logged in";
+        $_SESSION['username'] = $username;
+        header("location: login.php"); //redirect to dashboard on login
+      }
+      else {
+      $_SESSION['message'] = "The two passwords do not match";
+      }
+    }
+ ?>
 
-// call the register() function if register_btn is clicked
-if (isset($_POST['register_btn'])) {
-	register();
-}
+ <!DOCTYPE html>
+ <html>
+<head>
+  <title> Tutors246 Registration </title>
+  <link rel="stylesheet" href="assets/css/style.css">
+   <style>
+          body,
+          html {
+              height: 100%;
+              font-family: Arial, Helvetica, sans-serif;
+          }
+          * {
+              box-sizing: border-box;
+          }
+          .bg-img {
+              /* The image used */
+              background-image: url("https://static1.squarespace.com/static/52d6cb6be4b0b5fc69b8d205/t/5307d431e4b06c565def6aa7/1393022004734/education-background-checks.jpg?format=1500w");
+              text-rendering: all;
+              min-height: 100%;
+              /* Center and scale the image nicely */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+          }
+          /* Add styles to the form container */
+          .container {
+              position: center relative;
+              right: 0;
+              margin: 20px;
+              max-width: 600px;
+              padding: 16px;
+              background-color: white;
+              margin-right: auto;
+              margin-left: auto;
+          }
+          /* Full-width input fields */
+          input[type=text],
+          input[type=password] {
+              width: 100%;
+              padding: 15px;
+              margin: 5px 0 22px 0;
+              border: none;
+              background: #f1f1f1;
+          }
+              input[type=text]:focus,
+              input[type=password]:focus {
+                  background-color: #ddd;
+                  outline: none;
+              }
+          /* Set a style for the submit button */
+          .btn {
+              background-color: #4CAF50;
+              color: white;
+              padding: 16px 20px;
+              border: none;
+              cursor: pointer;
+              width: 100%;
+              opacity: 0.9;
+          }
+              .btn:hover {
+                  opacity: 1;
+              }
+          .imgcontainer {
+              text-align: center;
+              margin: 24px 0 12px 0;
+          }
+          img.avatar {
+              width: 40%;
+              border-radius: 50%;
+          }
+      </style>
 
-// REGISTER USER
-function register(){
-	// call these variables with the global keyword to make them available in function
-	global $db, $errors, $email, $password_1, $password_2;
+      <style>
+  	input[type=text], select {
+      width: 100%;
+      padding: 5px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  	}
+  	input[type=password], select {
+      width: 100%;
+      padding: 5px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  	}
 
-	// receive all input values from the form. Call the e() function
-    // defined below to escape form values
-	$email       =  e($_POST['email']);
-	$password_1  =  e($_POST['password_1']);
-	$password_2  =  e($_POST['password_2']);
+  	input[type=email], select {
+      width: 100%;
+      padding: 5px 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  	}
 
-	// form validation: ensure that the form is correctly filled
-	if (empty($email)) { 
-		array_push($errors, "Email is required"); 
-	}
-	if (empty($password_1)) { 
-		array_push($errors, "Password is required"); 
-	}
-	if ($password_1 != $password_2) {
-		array_push($errors, "The two passwords do not match");
-	}
+    .panel
+    {
+      height: 400px;
+      width: 450px;
+      background-color: #fff;
+      align-content: center;
+      margin-left: 550px;
+      margin-right: 250px;
+      margin-top: auto;
+      padding-left: 50px;
+      padding-top: 50px;
+      padding-right: 50px;
+    }
+  </style>
+  </head>
+  <body>
 
-	// register user if there are no errors in the form
-	if (count($errors) == 0) {
-		$password = md5($password_1);//encrypt the password before saving in the database
+      <div class="bg-img">
+      <br />
+      <div align="center">
+      <img src="http://tutors246.com/img/logo.png.png" align="center" height="auto" width="auto" />
+      </div>
 
-		if (isset($_POST['user_type'])) {
-			$user_type = e($_POST['user_type']);
-			$query = "INSERT INTO users (email, user_type, password) 
-					  VALUES('$email', '$user_type', '$password')";
-			mysqli_query($db, $query);
-			$_SESSION['success']  = "New user successfully created!!";
-			header('location: home.html');
-		}else{
-			$query = "INSERT INTO users (username, email, user_type, password) 
-					  VALUES('$email', 'user', '$password')";
-			mysqli_query($db, $query);
+  <br clear="all"><div style="text-align: center;">	<h2>Welcome to our online learning community!</h2> <p style="font-size: 25px">Register</p></div><br clear="all">
+<div class="panel">
+<form method="post" action="register.php">
+  <table>
 
-			// get id of the created user
-			$logged_in_user_id = mysqli_insert_id($db);
+    <tr>
+      <td>Username:</td>
+      <td><input type="text" name="username" class="textInput" autocomplete="on" required></td>
+    </tr>
 
-			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
-			$_SESSION['success']  = "You are now logged in";
-			header('location: home.php');				
-		}
-	}
-}
-?>
+    <tr>
+      <td>Email:</td>
+      <td><input type="email" name="email" class="textInput" autocomplete="on" required></td>
+    </tr>
 
-<script>
-// return user array from their id
-function getUserById($id){
-	global $db;
-	$query = "SELECT * FROM users WHERE id=" . $id;
-	$result = mysqli_query($db, $query);
+    <tr>
+      <td>Password:</td>
+      <td><input type="password" name="password" class="textInput" autocomplete="on" required></td>
+    </tr>
 
-	$user = mysqli_fetch_assoc($result);
-	return $user;
-}
+    <tr>
+      <td>Confirm Password:</td>
+      <td><input type="password" name="password2" class="textInput" autocomplete="on" required></td><br>
+    </tr>
 
-// escape string
-function e($val){
-	global $db;
-	return mysqli_real_escape_string($db, trim($val));
-}
+    <tr>
+      <td>Select Course:</td>
+      <td><select class="course" name="course">
+           <option class="course">CSEC 1278 - Mathematics</option>
+            <option class="course">CSEC 1279 - English Language</option>
+            <option class="course">CSEC 1280 - Principles of Business</option>
+            <option class="course">CSEC 1281 - Office Procedures</option>
+            <option class="course">CSEC 1282 - Additional Mathematics</option>
+      </select></td>
+    </tr>
 
-function display_error() {
-	global $errors;
-
-	if (count($errors) > 0){
-		echo '<div class="error">';
-			foreach ($errors as $error){
-				echo $error .'<br>';
-			}
-		echo '</div>';
-	}
-}	
-</script>
+    <tr>
+      <td></td>
+      <td><input type="submit" name="register_btn" value="Register"></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+ </html>
